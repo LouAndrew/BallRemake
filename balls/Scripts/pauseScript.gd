@@ -3,17 +3,16 @@ extends Control
 onready var PauseButton:Button = $Button
 onready var ResumeButton:Button = $Button2
 onready var LeaveButton:Button = $Button3
-onready var ChangeButton:Button = $Button4
-signal LevelCompleted()
-onready var LevelEnd = get_tree().get_nodes_in_group("LevelEnd")[0]
+
 func _ready():
 	pause_mode = Node.PAUSE_MODE_PROCESS
+# warning-ignore:return_value_discarded
 	PauseButton.connect("pressed",self,"PauseGame")
+# warning-ignore:return_value_discarded
 	ResumeButton.connect("pressed",self,"ResumeGame")
+# warning-ignore:return_value_discarded
 	LeaveButton.connect("pressed",self,"LeaveGame")
-	ChangeButton.connect("pressed",self,"changeLevel")
-func _process(_delta: float) -> void:
-	LevelCompletion()
+	
 func PauseGame():
 	get_tree().paused = true
 	$Button.visible = false
@@ -28,9 +27,5 @@ func ResumeGame():
 	$ColorRect.visible = false
 func LeaveGame():
 	get_tree().paused = false
+# warning-ignore:return_value_discarded
 	get_tree().change_scene("res://Scenes/MenuScene.tscn")
-func LevelCompletion():
-	if LevelEnd.playerHere == true:
-		$Button4.visible = true
-func changeLevel():
-	$"/root/LevelMonitor".newLevel += 1

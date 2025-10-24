@@ -1,0 +1,47 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Assets/NewPlainBackground.svg" type="Texture" id=1]
+[ext_resource path="res://Scripts/ChangeLevel.gd" type="Script" id=2]
+[ext_resource path="res://Assets/leave_icon.png" type="Texture" id=3]
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 3 )
+region = Rect2( 0, 15, 16, 15 )
+
+[sub_resource type="SpriteFrames" id=8]
+animations = [ {
+"frames": [ SubResource( 7 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="Control" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="Sprite" type="Sprite" parent="Control"]
+self_modulate = Color( 0.0784314, 0.0588235, 0.0588235, 1 )
+position = Vector2( 512, 800 )
+scale = Vector2( 1.2913, 0.533868 )
+texture = ExtResource( 1 )
+script = ExtResource( 2 )
+
+[node name="Button" type="Button" parent="Control/Sprite"]
+self_modulate = Color( 1, 1, 1, 0 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.733
+anchor_bottom = 0.791
+margin_left = -396.5
+margin_top = -561.0
+margin_right = -396.269
+margin_bottom = -560.502
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Control/Sprite/Button"]
+position = Vector2( 94.7834, 160.652 )
+rotation = -3.13694
+scale = Vector2( 12.2968, 21.9228 )
+frames = SubResource( 8 )

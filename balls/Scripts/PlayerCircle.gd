@@ -82,4 +82,5 @@ func LevelComplete():
 	var overLappingAreas = $Area2D.get_overlapping_areas()
 	for area in overLappingAreas:
 		if area.is_in_group("LevelEnd"):
+			set_physics_process(false)
 			finishedLevel = true
