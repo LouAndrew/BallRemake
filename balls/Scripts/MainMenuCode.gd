@@ -1,11 +1,17 @@
 extends Control
-onready var PlayButton = $Button
-onready var exitButton = $Button2
+onready var PlayButton = $playButton
+onready var levelsButton = $levelsButton
+onready var exitButton = $exitButton
 func _ready() -> void:
 	PlayButton.connect("pressed",self,"PlayGame")
+	levelsButton.connect("pressed",self,"LevelsScene")
 	exitButton.connect("pressed",self,"LeaveGame")
-	preload("res://Scenes/Level1.tscn").instance()
+	
 func PlayGame():
-	get_tree().change_scene("res://Scenes/PlayScene.tscn")
+	get_tree().change_scene(LevelMonitor.currentScene)
+	
+func LevelsScene():
+	get_tree().change_scene("res://Scenes/LevelsScene.tscn")
+	
 func LeaveGame():
 	get_tree().quit()

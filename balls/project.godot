@@ -22,6 +22,7 @@ _global_script_class_icons={
 
 config/name="Two Man"
 run/main_scene="res://Scenes/MenuScene.tscn"
+config/icon="res://Assets/ICON.png"
 
 [autoload]
 
@@ -29,6 +30,7 @@ LevelMonitor="*res://Scripts/LevelMonitor.gd"
 
 [display]
 
+window/size/resizable=false
 window/handheld/orientation="portrait"
 
 [gui]

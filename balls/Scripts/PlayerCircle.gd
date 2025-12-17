@@ -54,12 +54,12 @@ func resetJumpCount():
 func CompressCircle():
 	if Input.is_action_pressed("ui_down"):
 		$CollisionShape2D.scale = Vector2(1.0,0.8)
-		$Sprite.scale = Vector2(1.109,0.9)
+		$Sprite.scale = Vector2(2.215,2)
 		$CollisionShape2D.rotation = 0
 		$Sprite.rotation = 0
 	else:
 		$CollisionShape2D.scale = Vector2(1.0,1.0)
-		$Sprite.scale = Vector2(1.109,1.098)
+		$Sprite.scale = Vector2(2.215,2.211)
 func deathDetect():
 	var overLappingBodies = $Area2D.get_overlapping_bodies()
 	for bod in overLappingBodies:

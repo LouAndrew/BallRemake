@@ -8,10 +8,9 @@ extents = Vector2( 28, 103.5 )
 [node name="Spike" type="StaticBody2D" groups=["Spike"]]
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 0, -1 )
-scale = Vector2( 2.80078, 0.808594 )
+position = Vector2( -1, -0.999996 )
+scale = Vector2( 0.875, 1.625 )
 texture = ExtResource( 1 )
-offset = Vector2( -2, 0 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -1, 0 )
