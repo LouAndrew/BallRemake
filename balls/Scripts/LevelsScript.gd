@@ -3,7 +3,7 @@ extends Sprite
 onready var LvlButtons:Array = [$Lvl1Button,$Lvl2Button,$Lvl3Button,$Lvl4Button,$Lvl5Button,$Lvl6Button,$Lvl7Button,$Lvl8Button]
 
 onready var Buttons:Array = [$HomeButton,$NextChapterButton]
-
+var showLevelIcon:bool = false
 func _ready() -> void:
 	LvlButtons[0].connect("pressed",self,"_on_Button1_pressed")
 	LvlButtons[1].connect("pressed",self,"_on_Button2_pressed")
@@ -17,16 +17,25 @@ func _ready() -> void:
 	Buttons[0].connect("pressed",self,"_on_homeButton_pressed")
 	Buttons[1].connect("pressed",self,"_on_nextChapterButton_pressed")
 	
+	
+func _process(delta: float) -> void:
+	ButtonUtilisation(delta)
+	GoToPosition(delta)
+	
 func _on_Button1_pressed():
+	LevelMonitor.currentLevel = 0
 	get_tree().change_scene("res://Scenes/PlayScene.tscn")
 	
 func _on_Button2_pressed():
+	LevelMonitor.currentLevel = 1
 	get_tree().change_scene("res://Scenes/PlayScene2.tscn")
 	
 func _on_Button3_pressed():
+	LevelMonitor.currentLevel = 2
 	get_tree().change_scene("res://Scenes/PlayScene3.tscn")
 	
 func _on_Button4_pressed():
+	LevelMonitor.currentLevel = 3
 	get_tree().change_scene("res://Scenes/PlayScene4.tscn")
 	
 func _on_Button5_pressed():
@@ -46,3 +55,90 @@ func _on_homeButton_pressed():
 	
 func _on_nextChapterButton_pressed():
 	pass
+	
+func ButtonUtilisation(delta):
+	if $Lvl1Button/Icon.global_position.distance_to(get_global_mouse_position()) <= 40:
+		interpolateElScale(delta,Vector2(0.944,0.788),$Lvl1Button/Icon)
+	else:
+		interpolateElScale(delta,Vector2(0.844,0.688),$Lvl1Button/Icon)
+		
+	if $Lvl2Button/Icon.global_position.distance_to(get_global_mouse_position()) <= 40:
+		interpolateElScale(delta,Vector2(0.944,0.788),$Lvl2Button/Icon)
+	else:
+		interpolateElScale(delta,Vector2(0.844,0.688),$Lvl2Button/Icon)
+		
+	if $Lvl3Button/Icon.global_position.distance_to(get_global_mouse_position()) <= 40:
+		interpolateElScale(delta,Vector2(0.944,0.788),$Lvl3Button/Icon)
+	else:
+		interpolateElScale(delta,Vector2(0.844,0.688),$Lvl3Button/Icon)
+		
+	if $Lvl4Button/Icon.global_position.distance_to(get_global_mouse_position()) <= 40:
+		interpolateElScale(delta,Vector2(0.944,0.788),$Lvl4Button/Icon)
+	else:
+		interpolateElScale(delta,Vector2(0.844,0.688),$Lvl4Button/Icon)
+		
+	if $Lvl5Button/Icon.global_position.distance_to(get_global_mouse_position()) <= 40:
+		interpolateElScale(delta,Vector2(0.944,0.788),$Lvl5Button/Icon)
+	else:
+		interpolateElScale(delta,Vector2(0.844,0.688),$Lvl5Button/Icon)
+		
+	if $Lvl6Button/Icon.global_position.distance_to(get_global_mouse_position()) <= 40:
+		interpolateElScale(delta,Vector2(0.944,0.788),$Lvl6Button/Icon)
+	else:
+		interpolateElScale(delta,Vector2(0.844,0.688),$Lvl6Button/Icon)
+		
+	if $Lvl7Button/Icon.global_position.distance_to(get_global_mouse_position()) <= 40:
+		interpolateElScale(delta,Vector2(0.944,0.788),$Lvl7Button/Icon)
+	else:
+		interpolateElScale(delta,Vector2(0.844,0.688),$Lvl7Button/Icon)
+		
+	if $Lvl8Button/Icon.global_position.distance_to(get_global_mouse_position()) <= 40:
+		interpolateElScale(delta,Vector2(0.944,0.788),$Lvl8Button/Icon)
+	else:
+		interpolateElScale(delta,Vector2(0.844,0.688),$Lvl8Button/Icon)
+		
+	if $HomeButton/Sprite.global_position.distance_to(get_global_mouse_position()) <= 40:
+		interpolateElScale(delta,Vector2(0.741,0.678),$HomeButton/Sprite)
+	else:
+		interpolateElScale(delta,Vector2(0.641,0.578),$HomeButton/Sprite)
+		
+	if $NextChapterButton/Sprite.global_position.distance_to(get_global_mouse_position()) <= 40:
+		interpolateElScale(delta,Vector2(0.944,0.788),$NextChapterButton/Sprite)
+	else:
+		interpolateElScale(delta,Vector2(0.844,0.688),$NextChapterButton/Sprite)
+		
+func GoToPosition(delta):
+	interpolateElPosition(delta,Vector2(54,43),$Lvl1Button/Icon)
+	interpolateElPosition(delta,Vector2(54,43),$Lvl2Button/Icon)
+	interpolateElPosition(delta,Vector2(54,43),$Lvl3Button/Icon)
+	interpolateElPosition(delta,Vector2(54,43),$Lvl4Button/Icon)
+	interpolateElPosition(delta,Vector2(54,43),$Lvl5Button/Icon)
+	interpolateElPosition(delta,Vector2(54,43),$Lvl6Button/Icon)
+	interpolateElPosition(delta,Vector2(54,43),$Lvl7Button/Icon)
+	interpolateElPosition(delta,Vector2(54,43),$Lvl8Button/Icon)
+	interpolateElPosition(delta,Vector2(54,43),$Lvl8Button/Icon)
+	interpolateElPosition(delta,Vector2(48,39),$NextChapterButton/Sprite)
+	interpolateElPosition(delta,Vector2(41,37),$HomeButton/Sprite)
+	interpolateElPosition(delta,Vector2(442,-222),$Logo)
+	increaseScoreIcon(delta)
+	yield(get_tree().create_timer(0.5),"timeout")
+	showLevelIcon = true
+func increaseScoreIcon(delta):
+	if showLevelIcon == true:
+		interpolateElScale(delta,Vector2(1,1),$Lvl1Button/Icon/scoreBubble)
+		interpolateElScale(delta,Vector2(1,1),$Lvl2Button/Icon/scoreBubble)
+		interpolateElScale(delta,Vector2(1,1),$Lvl3Button/Icon/scoreBubble)
+		interpolateElScale(delta,Vector2(1,1),$Lvl4Button/Icon/scoreBubble)
+		interpolateElScale(delta,Vector2(1,1),$Lvl5Button/Icon/scoreBubble)
+		interpolateElScale(delta,Vector2(1,1),$Lvl6Button/Icon/scoreBubble)
+		interpolateElScale(delta,Vector2(1,1),$Lvl7Button/Icon/scoreBubble)
+		interpolateElScale(delta,Vector2(1,1),$Lvl8Button/Icon/scoreBubble)
+func interpolateElScale(delta,targetPosition:Vector2,Ui_element):
+	var t := 0.2
+	t += delta * 0.4
+	Ui_element.scale = Ui_element.scale.linear_interpolate(targetPosition,t)
+	
+func interpolateElPosition(delta,targetPosition:Vector2,Ui_element):
+	var t := 0.1
+	t += delta * 0.4
+	Ui_element.position = Ui_element.position.linear_interpolate(targetPosition,t)

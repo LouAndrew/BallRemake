@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Scripts/pauseScript.gd" type="Script" id=1]
 [ext_resource path="res://Assets/pause_icon.png" type="Texture" id=2]
@@ -7,6 +7,12 @@
 [ext_resource path="res://Scenes/ChangeLevelScene.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Assets/panel3.png" type="Texture" id=6]
 [ext_resource path="res://Scenes/backGroundScene.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Assets/retry_Icon.png" type="Texture" id=8]
+[ext_resource path="res://Assets/leave_icon.png" type="Texture" id=9]
+[ext_resource path="res://Scripts/GameLeaveMenuCode.gd" type="Script" id=10]
+[ext_resource path="res://Assets/tick.png" type="Texture" id=11]
+[ext_resource path="res://Assets/panel4.png" type="Texture" id=12]
+[ext_resource path="res://Assets/panel8.png" type="Texture" id=13]
 
 [node name="Node" type="Node"]
 
@@ -24,7 +30,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 margin_right = 2.0
 
-[node name="Button" type="Button" parent="CanvasLayer/Control"]
+[node name="pauseButton" type="Button" parent="CanvasLayer/Control"]
 self_modulate = Color( 1, 1, 1, 0 )
 anchor_left = 0.909
 anchor_top = 0.03
@@ -35,49 +41,121 @@ margin_top = 0.0900002
 margin_right = 0.461975
 margin_bottom = 0.0169907
 
-[node name="AnimatedSprite" type="Sprite" parent="CanvasLayer/Control/Button"]
-position = Vector2( 43.7731, 26 )
+[node name="Sprite" type="Sprite" parent="CanvasLayer/Control/pauseButton"]
+position = Vector2( 43.773, -40 )
 scale = Vector2( 0.523438, 0.453125 )
 texture = ExtResource( 2 )
 
 [node name="panel" type="Sprite" parent="CanvasLayer/Control"]
 visible = false
-self_modulate = Color( 0.109804, 0.494118, 0.47451, 1 )
+self_modulate = Color( 0, 0, 0, 1 )
 position = Vector2( 463, 47 )
 texture = ExtResource( 6 )
 
-[node name="Button2" type="Button" parent="CanvasLayer/Control"]
-visible = false
+[node name="resumeBtn" type="Button" parent="CanvasLayer/Control/panel"]
 self_modulate = Color( 1, 1, 1, 0 )
-anchor_left = 0.313
-anchor_top = 0.027
-anchor_right = 0.38
-anchor_bottom = 0.114
-margin_left = 0.426971
-margin_top = -0.118999
-margin_right = 0.019989
-margin_bottom = -0.0580063
+anchor_left = 0.082
+anchor_top = 0.106
+anchor_right = 0.22
+anchor_bottom = 0.702
+margin_left = -250.0
+margin_top = -46.964
+margin_right = -250.0
+margin_bottom = -46.988
 disabled = true
 
-[node name="AnimatedSprite" type="Sprite" parent="CanvasLayer/Control/Button2"]
-position = Vector2( 34.0611, 26 )
+[node name="Sprite" type="Sprite" parent="CanvasLayer/Control/panel/resumeBtn"]
+position = Vector2( 33.061, 26 )
 scale = Vector2( 0.585937, 0.445313 )
 texture = ExtResource( 3 )
 
-[node name="Button3" type="Button" parent="CanvasLayer/Control"]
-visible = false
+[node name="Button3" type="Button" parent="CanvasLayer/Control/panel"]
 self_modulate = Color( 1, 1, 1, 0 )
-margin_left = 504.0
-margin_top = 14.0
-margin_right = 570.0
-margin_bottom = 67.0
+anchor_left = 0.792
+anchor_top = 0.117
+anchor_right = 0.924
+anchor_bottom = 0.713
+margin_left = -250.0
+margin_top = -46.998
+margin_right = -250.0
+margin_bottom = -47.022
 disabled = true
 
-[node name="AnimatedSprite" type="Sprite" parent="CanvasLayer/Control/Button3"]
-self_modulate = Color( 0.0980392, 0.0980392, 0.0980392, 1 )
-position = Vector2( 34, 26 )
+[node name="Sprite" type="Sprite" parent="CanvasLayer/Control/panel/Button3"]
+self_modulate = Color( 0.309804, 0.301961, 0.301961, 1 )
+position = Vector2( 32, 27 )
 scale = Vector2( 0.5625, 0.4375 )
 texture = ExtResource( 4 )
+
+[node name="RetryBtn" type="Button" parent="CanvasLayer/Control/panel"]
+self_modulate = Color( 1, 1, 1, 0 )
+margin_left = -48.0
+margin_top = -33.0
+margin_right = 33.0
+margin_bottom = 46.0
+
+[node name="Sprite" type="Sprite" parent="CanvasLayer/Control/panel/RetryBtn"]
+position = Vector2( 43.5, 39 )
+scale = Vector2( 0.679688, 0.625 )
+texture = ExtResource( 8 )
+
+[node name="LeaveMenu" type="Sprite" parent="CanvasLayer/Control"]
+visible = false
+self_modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 496, 408 )
+texture = ExtResource( 12 )
+script = ExtResource( 10 )
+
+[node name="NoButton" type="Button" parent="CanvasLayer/Control/LeaveMenu"]
+self_modulate = Color( 1, 1, 1, 0 )
+anchor_left = 0.103
+anchor_top = 0.183
+anchor_right = 0.397
+anchor_bottom = 0.827
+margin_left = -149.9
+margin_top = -50.483
+margin_right = -150.1
+margin_bottom = -50.527
+
+[node name="Sprite" type="Sprite" parent="CanvasLayer/Control/LeaveMenu/NoButton"]
+position = Vector2( 44, 32 )
+scale = Vector2( 0.71875, 0.679688 )
+texture = ExtResource( 9 )
+
+[node name="YesButton" type="Button" parent="CanvasLayer/Control/LeaveMenu"]
+self_modulate = Color( 1, 1, 1, 0 )
+anchor_left = 0.103
+anchor_top = 0.163
+anchor_right = 0.393
+anchor_bottom = 0.827
+margin_left = 4.1
+margin_top = -49.463
+margin_right = 4.09999
+margin_bottom = -49.527
+
+[node name="Sprite" type="Sprite" parent="CanvasLayer/Control/LeaveMenu/YesButton"]
+position = Vector2( 44.5, 34 )
+scale = Vector2( 0.710938, 0.5625 )
+texture = ExtResource( 11 )
+
+[node name="DeathCountDisplay" type="Sprite" parent="CanvasLayer/Control"]
+visible = false
+self_modulate = Color( 0.407843, 0.384314, 0.384314, 1 )
+position = Vector2( 808, 382 )
+scale = Vector2( 0.8, 0.8 )
+texture = ExtResource( 12 )
+
+[node name="StatsBoard" type="Node" parent="CanvasLayer/Control"]
+
+[node name="ScoreBoard" type="Sprite" parent="CanvasLayer/Control/StatsBoard"]
+position = Vector2( 212, -20 )
+z_index = -1
+texture = ExtResource( 13 )
+
+[node name="DeathBoard" type="Sprite" parent="CanvasLayer/Control/StatsBoard"]
+position = Vector2( 520, -20 )
+z_index = -1
+texture = ExtResource( 13 )
 
 [node name="Control" parent="." instance=ExtResource( 5 )]
 

@@ -2,17 +2,24 @@ extends KinematicBody2D
 
 class_name Player
 
-var velocity:Vector2 = Vector2.ZERO
+var velocity:Vector2 = Vector2.UP
 var gravity:int = 1000
-var speed:int = 500
+var speed:int = 400
 var jumpForce:int = -300
 var jumpCount:int = 0
 var rotationInc:float = 1.5
 var SpawnPoint:Vector2 = Vector2()
 var finishedLevel:bool = false
 
-#func _ready() -> void:
-#	LevelManager.set_player_instance(self)
+var DeathCause:String = "Alive"
+var SpikeDeath:String = "SpikeDeath"
+var FallOffDeath:String = "FallOffDeath"
+
+var deathCounter:Array = [[0],[0]]
+
+signal showDeathStats()
+func _ready() -> void:
+	pass
 func _process(_delta: float) -> void:
 	CompressCircle()
 	resetJumpCount()
@@ -31,11 +38,13 @@ func _physics_process(delta: float) -> void:
 func moveMent():
 	if Input.is_action_pressed("ui_right"):
 		velocity.x = speed
+		$RayCast2D.cast_to = Vector2(116,105)
 		if Input.is_action_pressed("ui_down") != true:
 			$CollisionShape2D.rotation += rotationInc
 			$Sprite.rotation += rotationInc
 	elif Input.is_action_pressed("ui_left"):
 		velocity.x = -speed
+		$RayCast2D.cast_to = Vector2(116,-105)
 		if Input.is_action_pressed("ui_down") != true:
 			$CollisionShape2D.rotation -= rotationInc
 			$Sprite.rotation -= rotationInc
@@ -64,11 +73,17 @@ func deathDetect():
 	var overLappingBodies = $Area2D.get_overlapping_bodies()
 	for bod in overLappingBodies:
 		if bod.is_in_group("Spike"):
+			emit_signal("showDeathStats")
+			DeathCause = SpikeDeath
+			deathCounter[0][0]  += 1
 			Respawn()
 func FallOffDetect():
 	var overLappiingAreas = $Area2D.get_overlapping_areas()
 	for area in overLappiingAreas:
 		if area.is_in_group("fallOffs"):
+			emit_signal("showDeathStats")
+			DeathCause = FallOffDeath
+			deathCounter[1][0]  += 1
 			Respawn()
 func RespawnPointDeterminor():
 	var overLappingArea = $Area2D.get_overlapping_areas()
@@ -76,6 +91,11 @@ func RespawnPointDeterminor():
 		for area in overLappingArea:
 			if area.is_in_group("InitialSpawnPoint"):
 				SpawnPoint = area.position
+func slopDetect():
+	if $RayCast2D.is_colliding() and self.get_floor_angle() >= 1.5:
+		speed = 700
+	else:
+		speed = 500
 func Respawn():
 	self.position = SpawnPoint
 func LevelComplete():

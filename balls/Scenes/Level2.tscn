@@ -40,8 +40,8 @@ points = PoolVector2Array( 0, 0, 256, 0, 256, 252, 0, 252 )
 0/z_index = 0
 
 [sub_resource type="SegmentShape2D" id=4]
-a = Vector2( -31, 33 )
-b = Vector2( 33, -32 )
+a = Vector2( -32, 34 )
+b = Vector2( 33, -31 )
 
 [node name="TileMap" type="TileMap"]
 scale = Vector2( 0.251, 0.25 )
@@ -77,7 +77,7 @@ position = Vector2( 12111.6, 64 )
 [node name="SpikeContainor" type="Node2D" parent="."]
 
 [node name="Spike" parent="SpikeContainor" instance=ExtResource( 5 )]
-position = Vector2( 3450.2, 2712 )
+position = Vector2( 3450.2, 2716 )
 
 [node name="Spike2" parent="SpikeContainor" instance=ExtResource( 5 )]
 position = Vector2( 4741.04, 2716 )
@@ -140,7 +140,7 @@ position = Vector2( 22605.6, 3316 )
 [node name="Node" type="Node" parent="."]
 
 [node name="slide" type="StaticBody2D" parent="Node"]
-position = Vector2( 608, 864 )
+position = Vector2( 607, 863 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -149,11 +149,12 @@ __meta__ = {
 shape = SubResource( 4 )
 
 [node name="Sprite" type="Sprite" parent="Node/slide"]
-scale = Vector2( 1.01, 1 )
+position = Vector2( 0.840012, 0.5 )
+scale = Vector2( 1.03625, 1.01563 )
 texture = ExtResource( 3 )
 
 [node name="slide2" type="StaticBody2D" parent="Node"]
-position = Vector2( 672, 800 )
+position = Vector2( 671, 799 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -162,11 +163,12 @@ __meta__ = {
 shape = SubResource( 4 )
 
 [node name="Sprite" type="Sprite" parent="Node/slide2"]
-scale = Vector2( 1.01, 1 )
+position = Vector2( 1.50001, 0.5 )
+scale = Vector2( 1.01562, 1.01563 )
 texture = ExtResource( 3 )
 
 [node name="slide3" type="StaticBody2D" parent="Node"]
-position = Vector2( 736, 736 )
+position = Vector2( 735, 735 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -175,11 +177,12 @@ __meta__ = {
 shape = SubResource( 4 )
 
 [node name="Sprite" type="Sprite" parent="Node/slide3"]
-scale = Vector2( 1.01, 1 )
+position = Vector2( 1.50001, 1 )
+scale = Vector2( 1.01563, 1 )
 texture = ExtResource( 3 )
 
 [node name="slide4" type="StaticBody2D" parent="Node"]
-position = Vector2( 1248, 736 )
+position = Vector2( 1249, 735 )
 rotation = 1.5708
 __meta__ = {
 "_edit_group_": true
@@ -189,11 +192,12 @@ __meta__ = {
 shape = SubResource( 4 )
 
 [node name="Sprite" type="Sprite" parent="Node/slide4"]
-scale = Vector2( 1.01, 1 )
+position = Vector2( 1.0405, 0.0743408 )
+scale = Vector2( 1.00071, 1.00232 )
 texture = ExtResource( 3 )
 
 [node name="slide5" type="StaticBody2D" parent="Node"]
-position = Vector2( 1312, 800 )
+position = Vector2( 1314, 800 )
 rotation = 1.5708
 __meta__ = {
 "_edit_group_": true
@@ -203,11 +207,12 @@ __meta__ = {
 shape = SubResource( 4 )
 
 [node name="Sprite" type="Sprite" parent="Node/slide5"]
-scale = Vector2( 1.01, 1 )
+position = Vector2( 0, 1.10396 )
+scale = Vector2( 1.01, 1.00492 )
 texture = ExtResource( 3 )
 
 [node name="slide6" type="StaticBody2D" parent="Node"]
-position = Vector2( 1376, 864 )
+position = Vector2( 1378, 864 )
 rotation = 1.5708
 __meta__ = {
 "_edit_group_": true
@@ -217,11 +222,12 @@ __meta__ = {
 shape = SubResource( 4 )
 
 [node name="Sprite" type="Sprite" parent="Node/slide6"]
-scale = Vector2( 1.01, 1 )
+position = Vector2( 0, 0.630676 )
+scale = Vector2( 1.01, 1.01971 )
 texture = ExtResource( 3 )
 
 [node name="slide7" type="StaticBody2D" parent="Node"]
-position = Vector2( 3552, 864 )
+position = Vector2( 3551, 863 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -230,11 +236,12 @@ __meta__ = {
 shape = SubResource( 4 )
 
 [node name="Sprite" type="Sprite" parent="Node/slide7"]
-scale = Vector2( 1.01, 1 )
+position = Vector2( 0.840041, 0.5 )
+scale = Vector2( 1.03625, 1.01563 )
 texture = ExtResource( 3 )
 
 [node name="slide8" type="StaticBody2D" parent="Node"]
-position = Vector2( 3616, 800 )
+position = Vector2( 3615, 799 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -243,11 +250,12 @@ __meta__ = {
 shape = SubResource( 4 )
 
 [node name="Sprite" type="Sprite" parent="Node/slide8"]
-scale = Vector2( 1.01, 1 )
+position = Vector2( 1.49995, 0.5 )
+scale = Vector2( 1.01563, 1.01563 )
 texture = ExtResource( 3 )
 
 [node name="slide9" type="StaticBody2D" parent="Node"]
-position = Vector2( 3680, 736 )
+position = Vector2( 3679, 735 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -256,11 +264,12 @@ __meta__ = {
 shape = SubResource( 4 )
 
 [node name="Sprite" type="Sprite" parent="Node/slide9"]
-scale = Vector2( 1.01, 1 )
+position = Vector2( 1.49991, 0.5 )
+scale = Vector2( 1.01563, 1.01563 )
 texture = ExtResource( 3 )
 
 [node name="slide10" type="StaticBody2D" parent="Node"]
-position = Vector2( 3744, 672 )
+position = Vector2( 3743, 671 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -269,11 +278,12 @@ __meta__ = {
 shape = SubResource( 4 )
 
 [node name="Sprite" type="Sprite" parent="Node/slide10"]
-scale = Vector2( 1.01, 1 )
+position = Vector2( 1.50001, 0.5 )
+scale = Vector2( 1.01563, 1.01563 )
 texture = ExtResource( 3 )
 
 [node name="slide11" type="StaticBody2D" parent="Node"]
-position = Vector2( 3808, 608 )
+position = Vector2( 3807, 607 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -282,11 +292,12 @@ __meta__ = {
 shape = SubResource( 4 )
 
 [node name="Sprite" type="Sprite" parent="Node/slide11"]
-scale = Vector2( 1.01, 1 )
+position = Vector2( 0.839884, 1 )
+scale = Vector2( 1.03625, 1 )
 texture = ExtResource( 3 )
 
 [node name="slide12" type="StaticBody2D" parent="Node"]
-position = Vector2( 3936, 544 )
+position = Vector2( 3935, 543 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -295,11 +306,12 @@ __meta__ = {
 shape = SubResource( 4 )
 
 [node name="Sprite" type="Sprite" parent="Node/slide12"]
-scale = Vector2( 1.01, 1 )
+position = Vector2( 0.839982, 0.5 )
+scale = Vector2( 1.03625, 1.01563 )
 texture = ExtResource( 3 )
 
 [node name="slide13" type="StaticBody2D" parent="Node"]
-position = Vector2( 4000, 480 )
+position = Vector2( 3999, 479 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -308,11 +320,12 @@ __meta__ = {
 shape = SubResource( 4 )
 
 [node name="Sprite" type="Sprite" parent="Node/slide13"]
-scale = Vector2( 1.01, 1 )
+position = Vector2( 1.49991, 1 )
+scale = Vector2( 1.01563, 1 )
 texture = ExtResource( 3 )
 
 [node name="slide14" type="StaticBody2D" parent="Node"]
-position = Vector2( 4384, 480 )
+position = Vector2( 4386, 479 )
 rotation = 1.5708
 __meta__ = {
 "_edit_group_": true
@@ -322,11 +335,12 @@ __meta__ = {
 shape = SubResource( 4 )
 
 [node name="Sprite" type="Sprite" parent="Node/slide14"]
-scale = Vector2( 1.01, 1 )
+position = Vector2( 1.11489, 0.668882 )
+scale = Vector2( 1.00768, 1.0209 )
 texture = ExtResource( 3 )
 
 [node name="slide15" type="StaticBody2D" parent="Node"]
-position = Vector2( 4448, 544 )
+position = Vector2( 4450, 543 )
 rotation = 1.5708
 __meta__ = {
 "_edit_group_": true
@@ -336,11 +350,12 @@ __meta__ = {
 shape = SubResource( 4 )
 
 [node name="Sprite" type="Sprite" parent="Node/slide15"]
-scale = Vector2( 1.01, 1 )
+position = Vector2( 0.817595, 0.743592 )
+scale = Vector2( 1.02161, 1.02324 )
 texture = ExtResource( 3 )
 
 [node name="slide16" type="StaticBody2D" parent="Node"]
-position = Vector2( 4512, 608 )
+position = Vector2( 4514, 607 )
 rotation = 1.5708
 __meta__ = {
 "_edit_group_": true
@@ -350,11 +365,12 @@ __meta__ = {
 shape = SubResource( 4 )
 
 [node name="Sprite" type="Sprite" parent="Node/slide16"]
-scale = Vector2( 1.01, 1 )
+position = Vector2( 0.520314, 0.520261 )
+scale = Vector2( 1.01697, 1.01626 )
 texture = ExtResource( 3 )
 
 [node name="slide17" type="StaticBody2D" parent="Node"]
-position = Vector2( 4576, 672 )
+position = Vector2( 4578, 671 )
 rotation = 1.5708
 __meta__ = {
 "_edit_group_": true
@@ -364,11 +380,12 @@ __meta__ = {
 shape = SubResource( 4 )
 
 [node name="Sprite" type="Sprite" parent="Node/slide17"]
-scale = Vector2( 1.01, 1 )
+position = Vector2( 0.520257, 0.817722 )
+scale = Vector2( 1.02626, 1.00697 )
 texture = ExtResource( 3 )
 
 [node name="slide18" type="StaticBody2D" parent="Node"]
-position = Vector2( 4640, 736 )
+position = Vector2( 4642, 735 )
 rotation = 1.5708
 __meta__ = {
 "_edit_group_": true
@@ -378,11 +395,12 @@ __meta__ = {
 shape = SubResource( 4 )
 
 [node name="Sprite" type="Sprite" parent="Node/slide18"]
-scale = Vector2( 1.01, 1 )
+position = Vector2( 1.11486, 0.668701 )
+scale = Vector2( 1.01232, 1.0209 )
 texture = ExtResource( 3 )
 
 [node name="slide19" type="StaticBody2D" parent="Node"]
-position = Vector2( 4704, 800 )
+position = Vector2( 4706, 799 )
 rotation = 1.5708
 __meta__ = {
 "_edit_group_": true
@@ -392,11 +410,12 @@ __meta__ = {
 shape = SubResource( 4 )
 
 [node name="Sprite" type="Sprite" parent="Node/slide19"]
-scale = Vector2( 1.01, 1 )
+position = Vector2( 0.525528, 0.531717 )
+scale = Vector2( 1.02642, 1.01662 )
 texture = ExtResource( 3 )
 
 [node name="slide20" type="StaticBody2D" parent="Node"]
-position = Vector2( 4768, 864 )
+position = Vector2( 4770, 863 )
 rotation = 1.5708
 __meta__ = {
 "_edit_group_": true
@@ -406,5 +425,6 @@ __meta__ = {
 shape = SubResource( 4 )
 
 [node name="Sprite" type="Sprite" parent="Node/slide20"]
-scale = Vector2( 1.01, 1 )
+position = Vector2( 1.15623, 0.630371 )
+scale = Vector2( 1.01329, 1.0197 )
 texture = ExtResource( 3 )

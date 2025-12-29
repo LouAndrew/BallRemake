@@ -1,0 +1,34 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Assets/panel2.png" type="Texture" id=1]
+[ext_resource path="res://Assets/home.png" type="Texture" id=2]
+[ext_resource path="res://Scripts/CreditsSceneCode.gd" type="Script" id=3]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 1024.0
+margin_bottom = 600.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="panel" type="Sprite" parent="ColorRect"]
+self_modulate = Color( 0.317647, 0.294118, 0.294118, 1 )
+position = Vector2( 509, 302 )
+texture = ExtResource( 1 )
+script = ExtResource( 3 )
+
+[node name="Homebtn" type="Sprite" parent="ColorRect/panel"]
+position = Vector2( -449, -253.5 )
+scale = Vector2( 0.6875, 0.601563 )
+texture = ExtResource( 2 )
+
+[node name="Button" type="Button" parent="ColorRect/panel/Homebtn"]
+self_modulate = Color( 1, 1, 1, 0 )
+anchor_right = 1.0
+anchor_bottom = 0.977
+margin_left = -64.0
+margin_top = -64.0
+margin_right = -64.0
+margin_bottom = -64.056

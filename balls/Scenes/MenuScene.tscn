@@ -1,13 +1,19 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=15 format=2]
 
-[ext_resource path="res://Assets/panel1.png" type="Texture" id=1]
-[ext_resource path="res://Assets/panel3.png" type="Texture" id=2]
+[ext_resource path="res://Assets/panel5.png" type="Texture" id=1]
+[ext_resource path="res://Assets/tick.png" type="Texture" id=2]
 [ext_resource path="res://Scripts/MainMenuCode.gd" type="Script" id=3]
 [ext_resource path="res://Assets/play_icon.png" type="Texture" id=4]
 [ext_resource path="res://Assets/leave_icon.png" type="Texture" id=5]
 [ext_resource path="res://Assets/credits_icon.png" type="Texture" id=6]
 [ext_resource path="res://Assets/level_icon.png" type="Texture" id=7]
 [ext_resource path="res://Assets/ballLogo.png" type="Texture" id=8]
+[ext_resource path="res://Assets/panel4.png" type="Texture" id=9]
+[ext_resource path="res://Scripts/LeaveMenuCode.gd" type="Script" id=10]
+[ext_resource path="res://Assets/Settings_icon.png" type="Texture" id=11]
+[ext_resource path="res://Assets/panel6.png" type="Texture" id=12]
+[ext_resource path="res://Assets/background.png" type="Texture" id=13]
+[ext_resource path="res://Assets/panel7.png" type="Texture" id=14]
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
@@ -20,7 +26,12 @@ anchor_right = 1.002
 anchor_bottom = 1.0
 margin_right = -0.0439453
 margin_bottom = 2.0
-color = Color( 0.14902, 0.12549, 0.12549, 1 )
+color = Color( 0, 0, 0, 1 )
+
+[node name="Sprite" type="Sprite" parent="ColorRect"]
+position = Vector2( 510, 262 )
+scale = Vector2( 0.85, 0.85 )
+texture = ExtResource( 1 )
 
 [node name="Control" type="Control" parent="."]
 anchor_right = 0.378
@@ -31,105 +42,170 @@ script = ExtResource( 3 )
 
 [node name="playButton" type="Button" parent="Control"]
 self_modulate = Color( 1, 1, 1, 0 )
-anchor_left = 0.176
-anchor_top = 0.181
-anchor_right = 0.788
-anchor_bottom = 0.308
-margin_left = 0.0640106
-margin_top = -0.188004
-margin_right = -0.16803
-margin_bottom = 0.215988
+anchor_left = 0.075
+anchor_top = 0.212
+anchor_right = 0.687
+anchor_bottom = 0.339
+margin_left = -7.95
+margin_top = 392.824
+margin_right = -8.18207
+margin_bottom = 393.228
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="Sprite" type="Sprite" parent="Control/playButton"]
-position = Vector2( 117.75, 34 )
-scale = Vector2( 0.977083, 0.938272 )
-texture = ExtResource( 1 )
+position = Vector2( 112, 60 )
+scale = Vector2( 0.84375, 0.734375 )
+texture = ExtResource( 12 )
 
 [node name="icon" type="Sprite" parent="Control/playButton/Sprite"]
-position = Vector2( -6.90835, -1.06581 )
-scale = Vector2( 0.671642, 0.532895 )
+scale = Vector2( 0.763636, 0.680852 )
 texture = ExtResource( 4 )
 
 [node name="levelsButton" type="Button" parent="Control"]
 self_modulate = Color( 1, 1, 1, 0 )
-anchor_left = 0.192
-anchor_top = 0.403
-anchor_right = 0.777
-anchor_bottom = 0.527
-margin_left = -0.111992
-margin_top = 0.156006
-margin_right = 0.0780334
-margin_bottom = 0.204041
+anchor_left = 0.098
+anchor_top = 0.586
+anchor_right = 0.684
+anchor_bottom = 0.71
+margin_left = 241.172
+margin_top = 186.872
+margin_right = 240.976
+margin_bottom = 186.92
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="Sprite" type="Sprite" parent="Control/levelsButton"]
-position = Vector2( 112, 33 )
-scale = Vector2( 0.977, 0.938 )
-texture = ExtResource( 1 )
+position = Vector2( 111, 60 )
+scale = Vector2( 0.890625, 0.726562 )
+texture = ExtResource( 12 )
 
 [node name="icon" type="Sprite" parent="Control/levelsButton/Sprite"]
-position = Vector2( 1.53532, 1.0661 )
-scale = Vector2( 0.727674, 0.549707 )
+scale = Vector2( 0.798246, 0.709678 )
 texture = ExtResource( 7 )
 
 [node name="creditsButton" type="Button" parent="Control"]
 self_modulate = Color( 1, 1, 1, 0 )
-anchor_left = 0.197
-anchor_top = 0.639
-anchor_right = 0.782
-anchor_bottom = 0.763
-margin_left = -0.0419998
-margin_top = -0.171997
-margin_right = 0.14801
-margin_bottom = -0.123962
+anchor_left = 0.119
+anchor_top = 0.934
+anchor_right = 0.705
+anchor_bottom = 1.058
+margin_left = 482.066
+margin_top = -3.83194
+margin_right = 481.87
+margin_bottom = -3.784
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="Sprite" type="Sprite" parent="Control/creditsButton"]
-position = Vector2( 112, 33 )
-scale = Vector2( 0.977, 0.938 )
-texture = ExtResource( 1 )
+position = Vector2( 111, 60 )
+scale = Vector2( 0.890625, 0.726562 )
+texture = ExtResource( 12 )
 
 [node name="icon" type="Sprite" parent="Control/creditsButton/Sprite"]
-position = Vector2( -4.09416, -0.533041 )
-scale = Vector2( 0.719677, 0.52472 )
+scale = Vector2( 0.789473, 0.677419 )
 texture = ExtResource( 6 )
 
 [node name="exitButton" type="Button" parent="Control"]
 self_modulate = Color( 1, 1, 1, 0 )
-anchor_left = 0.192
-anchor_top = 0.878
-anchor_right = 0.777
-anchor_bottom = 1.0
-margin_left = 1.88801
-margin_top = -0.143951
-margin_right = 0.0780334
-margin_bottom = 6.10352e-05
+anchor_left = 2.016
+anchor_top = 0.936
+anchor_right = 2.596
+anchor_bottom = 1.058
+margin_left = -0.175964
+margin_top = -4.92798
+margin_right = -0.0559692
+margin_bottom = -4.784
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Sprite2" type="Sprite" parent="Control/exitButton"]
-position = Vector2( 111.5, 34.0001 )
-scale = Vector2( 0.977, 0.938 )
-texture = ExtResource( 1 )
+[node name="Sprite" type="Sprite" parent="Control/exitButton"]
+position = Vector2( 111, 60 )
+scale = Vector2( 0.890625, 0.726562 )
+texture = ExtResource( 12 )
 
-[node name="icon" type="Sprite" parent="Control/exitButton/Sprite2"]
-position = Vector2( -4.0942, -8.17776e-05 )
-scale = Vector2( 0.615724, 0.516391 )
+[node name="icon" type="Sprite" parent="Control/exitButton/Sprite"]
+scale = Vector2( 0.675438, 0.666666 )
 texture = ExtResource( 5 )
 
-[node name="Panel" type="Sprite" parent="Control"]
-self_modulate = Color( 0.109804, 0.329412, 0.396078, 1 )
-position = Vector2( 539, 46 )
+[node name="Logo" type="Sprite" parent="Control"]
+position = Vector2( 495, 248 )
+scale = Vector2( 0.8, 0.8 )
+texture = ExtResource( 8 )
+
+[node name="LeaveMenu" type="Sprite" parent="Control"]
+visible = false
+self_modulate = Color( 0.662745, 0.419608, 0.419608, 1 )
+position = Vector2( 496, 408 )
+texture = ExtResource( 9 )
+script = ExtResource( 10 )
+
+[node name="Sprite" type="Sprite" parent="Control/LeaveMenu"]
+self_modulate = Color( 0.403922, 0.392157, 0.392157, 0.521569 )
+position = Vector2( 16, -93.5 )
+scale = Vector2( 1.05273, 1.125 )
+texture = ExtResource( 13 )
+
+[node name="NoButton" type="Button" parent="Control/LeaveMenu"]
+self_modulate = Color( 1, 1, 1, 0 )
+anchor_left = 0.103
+anchor_top = 0.183
+anchor_right = 0.397
+anchor_bottom = 0.827
+margin_left = -149.9
+margin_top = -50.483
+margin_right = -150.1
+margin_bottom = -50.527
+
+[node name="Sprite" type="Sprite" parent="Control/LeaveMenu/NoButton"]
+position = Vector2( 44, 32 )
+scale = Vector2( 0.71875, 0.679688 )
+texture = ExtResource( 5 )
+
+[node name="YesButton" type="Button" parent="Control/LeaveMenu"]
+self_modulate = Color( 1, 1, 1, 0 )
+anchor_left = 0.103
+anchor_top = 0.163
+anchor_right = 0.393
+anchor_bottom = 0.827
+margin_left = 4.1
+margin_top = -49.463
+margin_right = 4.09999
+margin_bottom = -49.527
+
+[node name="Sprite" type="Sprite" parent="Control/LeaveMenu/YesButton"]
+position = Vector2( 44.5, 34 )
+scale = Vector2( 0.710938, 0.5625 )
 texture = ExtResource( 2 )
 
-[node name="Logo" type="Sprite" parent="Control"]
-position = Vector2( 842, 310 )
-texture = ExtResource( 8 )
+[node name="settingsButton" type="Button" parent="Control"]
+self_modulate = Color( 1, 1, 1, 0 )
+anchor_left = 2.275
+anchor_top = 0.027
+anchor_right = 2.5
+anchor_bottom = 0.172
+margin_left = -0.149963
+margin_top = 5.204
+margin_right = 6.10352e-05
+margin_bottom = -0.255989
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Control/settingsButton"]
+position = Vector2( 46, 20 )
+scale = Vector2( 0.890625, 0.648438 )
+texture = ExtResource( 12 )
+
+[node name="icon" type="Sprite" parent="Control/settingsButton/Sprite"]
+position = Vector2( -2.80695, 2.31325 )
+scale = Vector2( 0.815789, 0.963855 )
+texture = ExtResource( 11 )
+
+[node name="StatsBoard" type="Sprite" parent="Control"]
+position = Vector2( 136, 68 )
+texture = ExtResource( 14 )
