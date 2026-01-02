@@ -74,11 +74,11 @@ func buttonUtilisation(delta):
 		
 func showDeathStatsDisplay(delta):
 	if showDeathStats:
-		var deathTotal:int = 0
+		var _deathTotal:int = 0
 		$DeathCountDisplay.visible = true
 		interpolateEl(delta,Vector2(808,300),$DeathCountDisplay)
 		yield(get_tree().create_timer(1.0),"timeout")
-		deathTotal = player.deathCounter[0][0] + player.deathCounter[1][0]
+		_deathTotal = player.deathCounter[0][0] + player.deathCounter[1][0]
 		$DeathCountDisplay.visible = false
 		if $DeathCountDisplay.visible == false:
 			$DeathCountDisplay.global_position = Vector2(808,382)

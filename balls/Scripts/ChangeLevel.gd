@@ -9,6 +9,7 @@ func _ready() -> void:
 	
 func _process(delta: float) -> void:
 	SlideUp(delta)
+	detectMouse(delta)
 
 func SlideUp(delta):
 	if Circle.finishedLevel == true:
@@ -23,7 +24,22 @@ func changeLevel():
 	
 func backToHome():
 	get_tree().change_scene("res://Scenes/MenuScene.tscn")
+	
+func detectMouse(delta):
+	if $ContinueButton.global_position.distance_to(get_global_mouse_position()) < 70:
+		interpolateElScale(delta,Vector2(1.2,1.2),$ContinueButton)
+	else:
+		interpolateElScale(delta,Vector2(1,1),$ContinueButton)
+	if $HomeButton.global_position.distance_to(get_global_mouse_position()) < 70:
+		interpolateElScale(delta,Vector2(1.2,1.2),$HomeButton)
+	else:
+		interpolateElScale(delta,Vector2(1,1),$HomeButton)
 
+func interpolateElScale(delta,targetPosition:Vector2,Ui_element):
+	var t := 0.1
+	t += delta * 0.4
+	Ui_element.scale = Ui_element.scale.linear_interpolate(targetPosition,t)
+	
 func interpolateEl(delta,targetPosition:Vector2,Ui_element):
 	var t := 0.1
 	t += delta * 0.4

@@ -76,6 +76,7 @@ func deathDetect():
 			emit_signal("showDeathStats")
 			DeathCause = SpikeDeath
 			deathCounter[0][0]  += 1
+			ScoringSys.newDeathScore[LevelMonitor.currentLevel] += 5
 			Respawn()
 func FallOffDetect():
 	var overLappiingAreas = $Area2D.get_overlapping_areas()
@@ -84,6 +85,7 @@ func FallOffDetect():
 			emit_signal("showDeathStats")
 			DeathCause = FallOffDeath
 			deathCounter[1][0]  += 1
+			ScoringSys.newDeathScore[LevelMonitor.currentLevel] += 1
 			Respawn()
 func RespawnPointDeterminor():
 	var overLappingArea = $Area2D.get_overlapping_areas()

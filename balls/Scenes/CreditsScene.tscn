@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Assets/panel2.png" type="Texture" id=1]
 [ext_resource path="res://Assets/home.png" type="Texture" id=2]
 [ext_resource path="res://Scripts/CreditsSceneCode.gd" type="Script" id=3]
+[ext_resource path="res://font1.tres" type="DynamicFont" id=4]
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
@@ -32,3 +33,35 @@ margin_left = -64.0
 margin_top = -64.0
 margin_right = -64.0
 margin_bottom = -64.056
+
+[node name="Title1" type="Label" parent="ColorRect/panel"]
+anchor_left = 0.129
+anchor_top = 0.037
+anchor_right = 0.831
+anchor_bottom = 0.308
+margin_left = -366.686
+margin_top = -191.134
+margin_right = 81.046
+margin_bottom = -100.656
+rect_scale = Vector2( 0.535, 0.535 )
+custom_fonts/font = ExtResource( 4 )
+text = "Programer & artist"
+align = 1
+valign = 1
+
+[node name="name1" type="Label" parent="ColorRect/panel"]
+anchor_left = 0.129
+anchor_top = 0.275
+anchor_right = 0.826
+anchor_bottom = 0.547
+margin_left = -370.686
+margin_top = -191.05
+margin_right = 80.716
+margin_bottom = -100.954
+rect_scale = Vector2( 0.535, 0.535 )
+custom_fonts/font = ExtResource( 4 )
+text = "Kaweesa Louis Andrew"
+align = 1
+valign = 1
+uppercase = true
+percent_visible = -0.0555556

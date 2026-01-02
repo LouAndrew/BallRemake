@@ -1,12 +1,15 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Assets/GreySpike.png" type="Texture" id=1]
 [ext_resource path="res://Assets/pointBubble.png" type="Texture" id=2]
+[ext_resource path="res://Scripts/SpikeCode.gd" type="Script" id=3]
+[ext_resource path="res://font1.tres" type="DynamicFont" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 28, 103.5 )
 
 [node name="Spike" type="StaticBody2D" groups=["Spike"]]
+script = ExtResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( -1, -0.999996 )
@@ -20,4 +23,20 @@ shape = SubResource( 1 )
 
 [node name="pointBubble" type="Sprite" parent="."]
 visible = false
+self_modulate = Color( 0.443137, 0.0431373, 0.0431373, 1 )
+scale = Vector2( 1e-05, 1e-05 )
 texture = ExtResource( 2 )
+
+[node name="score" type="Label" parent="pointBubble"]
+anchor_left = -0.012
+anchor_top = -0.175
+anchor_right = 0.975
+anchor_bottom = 0.975
+margin_left = -40.04
+margin_top = -40.0
+margin_right = -40.0
+margin_bottom = -40.0
+custom_fonts/font = ExtResource( 4 )
+text = "5"
+align = 1
+valign = 1

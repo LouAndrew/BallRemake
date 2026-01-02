@@ -1,9 +1,9 @@
 extends Sprite
 
 onready var LvlButtons:Array = [$Lvl1Button,$Lvl2Button,$Lvl3Button,$Lvl4Button,$Lvl5Button,$Lvl6Button,$Lvl7Button,$Lvl8Button]
-
 onready var Buttons:Array = [$HomeButton,$NextChapterButton]
 
+onready var scoreBubbles:Array = [$Lvl1Button/Icon/scoreBubble/score,$Lvl2Button/Icon/scoreBubble/score,$Lvl3Button/Icon/scoreBubble/score,$Lvl4Button/Icon/scoreBubble/score,$Lvl5Button/Icon/scoreBubble/score,$Lvl6Button/Icon/scoreBubble/score,$Lvl7Button/Icon/scoreBubble/score,$Lvl8Button/Icon/scoreBubble/score]
 func _ready() -> void:
 	LvlButtons[0].connect("pressed",self,"_on_Button1_pressed")
 	LvlButtons[1].connect("pressed",self,"_on_Button2_pressed")
@@ -17,22 +17,29 @@ func _ready() -> void:
 	Buttons[0].connect("pressed",self,"_on_homeButton_pressed")
 	Buttons[1].connect("pressed",self,"_on_nextChapterButton_pressed")
 	
-	
+	for i in LevelMonitor.level:
+		LvlButtons[i].modulate = Color(1,1,1,1)
+	for i in ScoringSys.scores.size():
+		scoreBubbles[i].set_text(str(ScoringSys.scores[i]))
 func _process(delta: float) -> void:
 	ButtonUtilisation(delta)
 	GoToPosition(delta)
 	
 func _on_Button1_pressed():
-	get_tree().change_scene("res://Scenes/PlayScene.tscn")
+	if LevelMonitor.level >= 1:
+		get_tree().change_scene("res://Scenes/PlayScene.tscn")
 	
 func _on_Button2_pressed():
-	get_tree().change_scene("res://Scenes/PlayScene2.tscn")
+	if LevelMonitor.level >= 2:
+		get_tree().change_scene("res://Scenes/PlayScene2.tscn")
 	
 func _on_Button3_pressed():
-	get_tree().change_scene("res://Scenes/PlayScene3.tscn")
+	if LevelMonitor.level >= 3:
+		get_tree().change_scene("res://Scenes/PlayScene3.tscn")
 	
 func _on_Button4_pressed():
-	get_tree().change_scene("res://Scenes/PlayScene4.tscn")
+	if LevelMonitor.level >= 4:
+		get_tree().change_scene("res://Scenes/PlayScene4.tscn")
 	
 func _on_Button5_pressed():
 	pass

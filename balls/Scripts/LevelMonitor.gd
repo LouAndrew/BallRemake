@@ -4,6 +4,7 @@ var LevelScenes:Array = ["res://Scenes/PlayScene.tscn","res://Scenes/PlayScene2.
 var currentLevel:int = 0
 var newLevel:int = 0
 var currentScene:String = LevelScenes[0]
+var level:int = 1
 func _process(_delta: float) -> void:
 	SwitchLevel()
 func SwitchLevel():
@@ -12,6 +13,10 @@ func SwitchLevel():
 			currentLevel += 1
 			currentScene = LevelScenes[currentLevel]
 			get_tree().change_scene(LevelScenes[currentLevel])
+			
+	if currentLevel >= level:
+		level += 1
+		
 	if newLevel == LevelScenes.size():
 		get_tree().free()
 		
