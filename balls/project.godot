@@ -27,7 +27,6 @@ config/icon="res://Assets/ICON.png"
 [autoload]
 
 LevelMonitor="*res://Scripts/LevelMonitor.gd"
-ScoringSys="*res://Scripts/ScoringSys.gd"
 
 [display]
 

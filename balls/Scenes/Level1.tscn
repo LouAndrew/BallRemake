@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Assets/GreyTile.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/PlayerCircle.tscn" type="PackedScene" id=2]
@@ -8,7 +8,6 @@
 [ext_resource path="res://Scenes/FallOffs.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/LevelEnd.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/InitialSpawnPoint.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Scenes/Mark.tscn" type="PackedScene" id=9]
 
 [sub_resource type="OccluderPolygon2D" id=1]
 polygon = PoolVector2Array( 0, 0, 256, 0, 256, 256, 0, 256 )
@@ -122,43 +121,32 @@ rotation = 1.57289
 position = Vector2( -2876.5, -112 )
 rotation = -3.14042
 
-[node name="slides" type="Node" parent="."]
+[node name="Node" type="Node" parent="."]
 
-[node name="slide" type="StaticBody2D" parent="slides"]
+[node name="slide" type="StaticBody2D" parent="Node"]
 position = Vector2( 1567, 734 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="slides/slide"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node/slide"]
 shape = SubResource( 4 )
 
-[node name="Sprite" type="Sprite" parent="slides/slide"]
-position = Vector2( 1.182, 1 )
-scale = Vector2( 1.00569, 1.031 )
+[node name="Sprite" type="Sprite" parent="Node/slide"]
+position = Vector2( 0.68204, 1.50398 )
+scale = Vector2( 1.02131, 1.04675 )
 texture = ExtResource( 3 )
 
-[node name="slide2" type="StaticBody2D" parent="slides"]
+[node name="slide2" type="StaticBody2D" parent="Node"]
 position = Vector2( 1503, 799 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="slides/slide2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node/slide2"]
 shape = SubResource( 4 )
 
-[node name="Sprite" type="Sprite" parent="slides/slide2"]
+[node name="Sprite" type="Sprite" parent="Node/slide2"]
 position = Vector2( 0.840009, 0.5 )
 scale = Vector2( 1.03625, 1.01563 )
 texture = ExtResource( 3 )
-
-[node name="marks" type="Node" parent="."]
-
-[node name="Mark" parent="marks" instance=ExtResource( 9 )]
-position = Vector2( 1400, 448 )
-scale = Vector2( 0.251, 0.25 )
-ypos = 448
-
-[node name="Mark2" parent="marks" instance=ExtResource( 9 )]
-position = Vector2( 5078, 449 )
-scale = Vector2( 0.251, 0.25 )

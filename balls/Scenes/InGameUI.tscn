@@ -30,7 +30,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 margin_right = 2.0
 
-[node name="pauseButton" type="Button" parent="CanvasLayer/Control"]
+[node name="Button" type="Button" parent="CanvasLayer/Control"]
 self_modulate = Color( 1, 1, 1, 0 )
 anchor_left = 0.909
 anchor_top = 0.03
@@ -41,8 +41,8 @@ margin_top = 0.0900002
 margin_right = 0.461975
 margin_bottom = 0.0169907
 
-[node name="Sprite" type="Sprite" parent="CanvasLayer/Control/pauseButton"]
-position = Vector2( 43.773, -40 )
+[node name="Sprite" type="Sprite" parent="CanvasLayer/Control/Button"]
+position = Vector2( 43.7731, 26 )
 scale = Vector2( 0.523438, 0.453125 )
 texture = ExtResource( 2 )
 
@@ -52,49 +52,48 @@ self_modulate = Color( 0, 0, 0, 1 )
 position = Vector2( 463, 47 )
 texture = ExtResource( 6 )
 
-[node name="resumeBtn" type="Button" parent="CanvasLayer/Control/panel"]
+[node name="Button2" type="Button" parent="CanvasLayer/Control"]
+visible = false
 self_modulate = Color( 1, 1, 1, 0 )
-anchor_left = 0.082
-anchor_top = 0.106
-anchor_right = 0.22
-anchor_bottom = 0.702
-margin_left = -250.0
-margin_top = -46.964
-margin_right = -250.0
-margin_bottom = -46.988
+anchor_left = 0.248
+anchor_top = 0.017
+anchor_right = 0.317
+anchor_bottom = 0.112
+margin_left = 0.0479889
+margin_top = -0.149
+margin_right = 0.391998
+margin_bottom = 0.136002
 disabled = true
 
-[node name="Sprite" type="Sprite" parent="CanvasLayer/Control/panel/resumeBtn"]
+[node name="Sprite" type="Sprite" parent="CanvasLayer/Control/Button2"]
 position = Vector2( 33.061, 26 )
 scale = Vector2( 0.585937, 0.445313 )
 texture = ExtResource( 3 )
 
-[node name="Button3" type="Button" parent="CanvasLayer/Control/panel"]
+[node name="Button3" type="Button" parent="CanvasLayer/Control"]
+visible = false
 self_modulate = Color( 1, 1, 1, 0 )
-anchor_left = 0.792
-anchor_top = 0.117
-anchor_right = 0.924
-anchor_bottom = 0.713
-margin_left = -250.0
-margin_top = -46.998
-margin_right = -250.0
-margin_bottom = -47.022
+margin_left = 609.0
+margin_top = 11.0
+margin_right = 675.0
+margin_bottom = 67.0
 disabled = true
 
-[node name="Sprite" type="Sprite" parent="CanvasLayer/Control/panel/Button3"]
-self_modulate = Color( 0.309804, 0.301961, 0.301961, 1 )
+[node name="Sprite" type="Sprite" parent="CanvasLayer/Control/Button3"]
+self_modulate = Color( 0.0980392, 0.0980392, 0.0980392, 1 )
 position = Vector2( 32, 27 )
 scale = Vector2( 0.5625, 0.4375 )
 texture = ExtResource( 4 )
 
-[node name="RetryBtn" type="Button" parent="CanvasLayer/Control/panel"]
+[node name="RetryBtn" type="Button" parent="CanvasLayer/Control"]
+visible = false
 self_modulate = Color( 1, 1, 1, 0 )
-margin_left = -48.0
-margin_top = -33.0
-margin_right = 33.0
-margin_bottom = 46.0
+margin_left = 415.0
+margin_top = 14.0
+margin_right = 496.0
+margin_bottom = 93.0
 
-[node name="Sprite" type="Sprite" parent="CanvasLayer/Control/panel/RetryBtn"]
+[node name="Sprite" type="Sprite" parent="CanvasLayer/Control/RetryBtn"]
 position = Vector2( 43.5, 39 )
 scale = Vector2( 0.679688, 0.625 )
 texture = ExtResource( 8 )
@@ -148,12 +147,12 @@ texture = ExtResource( 12 )
 [node name="StatsBoard" type="Node" parent="CanvasLayer/Control"]
 
 [node name="ScoreBoard" type="Sprite" parent="CanvasLayer/Control/StatsBoard"]
-position = Vector2( 212, -20 )
+position = Vector2( 212, 35 )
 z_index = -1
 texture = ExtResource( 13 )
 
 [node name="DeathBoard" type="Sprite" parent="CanvasLayer/Control/StatsBoard"]
-position = Vector2( 520, -20 )
+position = Vector2( 520, 35 )
 z_index = -1
 texture = ExtResource( 13 )
 

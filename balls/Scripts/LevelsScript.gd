@@ -3,7 +3,7 @@ extends Sprite
 onready var LvlButtons:Array = [$Lvl1Button,$Lvl2Button,$Lvl3Button,$Lvl4Button,$Lvl5Button,$Lvl6Button,$Lvl7Button,$Lvl8Button]
 
 onready var Buttons:Array = [$HomeButton,$NextChapterButton]
-var showLevelIcon:bool = false
+
 func _ready() -> void:
 	LvlButtons[0].connect("pressed",self,"_on_Button1_pressed")
 	LvlButtons[1].connect("pressed",self,"_on_Button2_pressed")
@@ -23,19 +23,15 @@ func _process(delta: float) -> void:
 	GoToPosition(delta)
 	
 func _on_Button1_pressed():
-	LevelMonitor.currentLevel = 0
 	get_tree().change_scene("res://Scenes/PlayScene.tscn")
 	
 func _on_Button2_pressed():
-	LevelMonitor.currentLevel = 1
 	get_tree().change_scene("res://Scenes/PlayScene2.tscn")
 	
 func _on_Button3_pressed():
-	LevelMonitor.currentLevel = 2
 	get_tree().change_scene("res://Scenes/PlayScene3.tscn")
 	
 func _on_Button4_pressed():
-	LevelMonitor.currentLevel = 3
 	get_tree().change_scene("res://Scenes/PlayScene4.tscn")
 	
 func _on_Button5_pressed():
@@ -120,19 +116,6 @@ func GoToPosition(delta):
 	interpolateElPosition(delta,Vector2(48,39),$NextChapterButton/Sprite)
 	interpolateElPosition(delta,Vector2(41,37),$HomeButton/Sprite)
 	interpolateElPosition(delta,Vector2(442,-222),$Logo)
-	increaseScoreIcon(delta)
-	yield(get_tree().create_timer(0.5),"timeout")
-	showLevelIcon = true
-func increaseScoreIcon(delta):
-	if showLevelIcon == true:
-		interpolateElScale(delta,Vector2(1,1),$Lvl1Button/Icon/scoreBubble)
-		interpolateElScale(delta,Vector2(1,1),$Lvl2Button/Icon/scoreBubble)
-		interpolateElScale(delta,Vector2(1,1),$Lvl3Button/Icon/scoreBubble)
-		interpolateElScale(delta,Vector2(1,1),$Lvl4Button/Icon/scoreBubble)
-		interpolateElScale(delta,Vector2(1,1),$Lvl5Button/Icon/scoreBubble)
-		interpolateElScale(delta,Vector2(1,1),$Lvl6Button/Icon/scoreBubble)
-		interpolateElScale(delta,Vector2(1,1),$Lvl7Button/Icon/scoreBubble)
-		interpolateElScale(delta,Vector2(1,1),$Lvl8Button/Icon/scoreBubble)
 func interpolateElScale(delta,targetPosition:Vector2,Ui_element):
 	var t := 0.2
 	t += delta * 0.4

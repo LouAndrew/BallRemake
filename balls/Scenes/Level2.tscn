@@ -332,6 +332,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node/slide14"]
+position = Vector2( 1.561, -1.081 )
 shape = SubResource( 4 )
 
 [node name="Sprite" type="Sprite" parent="Node/slide14"]

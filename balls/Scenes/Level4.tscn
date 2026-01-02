@@ -286,7 +286,7 @@ texture = ExtResource( 9 )
 position = Vector2( 613, -618 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node/slide3"]
-position = Vector2( -3, 2 )
+position = Vector2( -0.112, 2 )
 shape = SubResource( 6 )
 
 [node name="Sprite" type="Sprite" parent="Node/slide3"]
@@ -373,6 +373,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node/slide9"]
+position = Vector2( 1.76, -1.173 )
 shape = SubResource( 6 )
 
 [node name="Sprite" type="Sprite" parent="Node/slide9"]

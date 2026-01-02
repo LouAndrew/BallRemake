@@ -1,9 +1,9 @@
 extends Control
 
-onready var PauseButton:Button = $pauseButton
-onready var ResumeButton:Button = $panel/resumeBtn
-onready var HomeButton:Button = $panel/Button3
-onready var RetryButton:Button = $panel/RetryBtn
+onready var PauseButton:Button = $Button
+onready var ResumeButton:Button = $Button2
+onready var HomeButton:Button = $Button3
+onready var RetryButton:Button = $RetryBtn
 
 var showDeathStats:bool = false
 var deathNum:int = 0 
@@ -25,7 +25,6 @@ func _ready():
 func _process(delta: float) -> void:
 	buttonUtilisation(delta)
 	showDeathStatsDisplay(delta)
-	moveToPos(delta)
 	
 func showDthStat():
 	showDeathStats = true
@@ -53,30 +52,26 @@ func reloadLevel():
 	get_tree().paused = false
 	
 func buttonUtilisation(delta):
-	if $pauseButton/Sprite.global_position.distance_to(get_global_mouse_position()) <= 40:
-		interpolateElScale(delta,Vector2(0.663,0.538),$pauseButton/Sprite)
+	if $Button/Sprite.global_position.distance_to(get_global_mouse_position()) <= 40:
+		interpolateElScale(delta,Vector2(0.663,0.538),$Button/Sprite)
 	else:
-		interpolateElScale(delta,Vector2(0.563,0.438),$pauseButton/Sprite)
+		interpolateElScale(delta,Vector2(0.563,0.438),$Button/Sprite)
 		
-	if $panel/resumeBtn/Sprite.global_position.distance_to(get_global_mouse_position()) <= 40:
-		interpolateElScale(delta,Vector2(0.663,0.538),$panel/resumeBtn/Sprite)
+	if $Button2/Sprite.global_position.distance_to(get_global_mouse_position()) <= 40:
+		interpolateElScale(delta,Vector2(0.663,0.538),$Button2/Sprite)
 	else:
-		interpolateElScale(delta,Vector2(0.563,0.438),$panel/resumeBtn/Sprite)
+		interpolateElScale(delta,Vector2(0.563,0.438),$Button2/Sprite)
 		
-	if $panel/Button3/Sprite.global_position.distance_to(get_global_mouse_position()) <= 40:
-		interpolateElScale(delta,Vector2(0.663,0.538),$panel/Button3/Sprite)
+	if $Button3/Sprite.global_position.distance_to(get_global_mouse_position()) <= 40:
+		interpolateElScale(delta,Vector2(0.663,0.538),$Button3/Sprite)
 	else:
-		interpolateElScale(delta,Vector2(0.563,0.438),$panel/Button3/Sprite)
+		interpolateElScale(delta,Vector2(0.563,0.438),$Button3/Sprite)
 		
-	if $panel/RetryBtn/Sprite.global_position.distance_to(get_global_mouse_position()) <= 40:
-		interpolateElScale(delta,Vector2(0.78,0.725),$panel/RetryBtn/Sprite)
+	if $RetryBtn/Sprite.global_position.distance_to(get_global_mouse_position()) <= 40:
+		interpolateElScale(delta,Vector2(0.78,0.725),$RetryBtn/Sprite)
 	else:
-		interpolateElScale(delta,Vector2(0.68,0.625),$panel/RetryBtn/Sprite)
+		interpolateElScale(delta,Vector2(0.68,0.625),$RetryBtn/Sprite)
 		
-func moveToPos(delta):
-	interpolateEl(delta,Vector2(520,35),$StatsBoard/DeathBoard)
-	interpolateEl(delta,Vector2(212,35),$StatsBoard/ScoreBoard)
-	interpolateEl(delta,Vector2(43.773,26),$pauseButton/Sprite)
 func showDeathStatsDisplay(delta):
 	if showDeathStats:
 		var deathTotal:int = 0
@@ -92,8 +87,7 @@ func showDeathStatsDisplay(delta):
 func interpolateEl(delta,targetPosition:Vector2,Ui_element):
 	var t := 0.1
 	t += delta * 0.4
-	Ui_element.position = Ui_element.position.linear_interpolate(targetPosition,t)
-	
+	Ui_element.global_position = Ui_element.global_position.linear_interpolate(targetPosition,t)
 func interpolateElScale(delta,targetPosition:Vector2,Ui_element):
 	var t := 0.2
 	t += delta * 0.4

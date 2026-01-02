@@ -93,7 +93,7 @@ rotation = -3.13507
 
 [node name="Spike4" parent="SpikeContainor" instance=ExtResource( 4 )]
 position = Vector2( 5235.06, 608 )
-rotation = 3.14159
+rotation = -0.00138626
 
 [node name="Spike5" parent="SpikeContainor" instance=ExtResource( 4 )]
 position = Vector2( 20844.6, 2208.01 )
@@ -131,6 +131,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node/slide"]
+position = Vector2( 3.803, -3.336 )
 shape = SubResource( 4 )
 
 [node name="Sprite" type="Sprite" parent="Node/slide"]
@@ -191,6 +192,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node/slide5"]
+position = Vector2( 2.266, -3.329 )
 shape = SubResource( 4 )
 
 [node name="Sprite" type="Sprite" parent="Node/slide5"]
@@ -306,6 +308,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node/slide13"]
+position = Vector2( 3.528, -3.292 )
 shape = SubResource( 4 )
 
 [node name="Sprite" type="Sprite" parent="Node/slide13"]

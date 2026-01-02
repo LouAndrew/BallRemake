@@ -9,8 +9,7 @@ func _ready() -> void:
 	
 func _process(delta: float) -> void:
 	SlideUp(delta)
-	detectMousePos(delta)
-	
+
 func SlideUp(delta):
 	if Circle.finishedLevel == true:
 		self.visible = true
@@ -19,16 +18,6 @@ func SlideUp(delta):
 		self.visible = false
 	if self.position == TargetPos:
 		$Button.visible = true
-		
-func detectMousePos(delta):
-	if $ContinueButton.global_position.distance_to(get_global_mouse_position()) <= 100:
-		interpolateElScale(delta,Vector2(1.2,1.2),$ContinueButton)
-	else:
-		interpolateElScale(delta,Vector2(1,1),$ContinueButton)
-	if $HomeButton.global_position.distance_to(get_global_mouse_position()) <= 100:
-		interpolateElScale(delta,Vector2(1.2,1.2),$HomeButton)
-	else:
-		interpolateElScale(delta,Vector2(1,1),$HomeButton)
 func changeLevel():
 	LevelMonitor.newLevel += 1
 	
@@ -39,7 +28,3 @@ func interpolateEl(delta,targetPosition:Vector2,Ui_element):
 	var t := 0.1
 	t += delta * 0.4
 	Ui_element.position = Ui_element.position.linear_interpolate(targetPosition,t)
-func interpolateElScale(delta,targetPosition:Vector2,Ui_element):
-	var t := 0.1
-	t += delta * 0.4
-	Ui_element.scale = Ui_element.scale.linear_interpolate(targetPosition,t)

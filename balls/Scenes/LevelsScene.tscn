@@ -49,7 +49,6 @@ texture = ExtResource( 3 )
 
 [node name="scoreBubble" type="Sprite" parent="BackGround/LevelPanel/Lvl1Button/Icon"]
 position = Vector2( 30, -50 )
-scale = Vector2( 1e-05, 1e-05 )
 texture = ExtResource( 8 )
 
 [node name="Lvl2Button" type="Button" parent="BackGround/LevelPanel"]
@@ -69,7 +68,6 @@ texture = ExtResource( 3 )
 
 [node name="scoreBubble" type="Sprite" parent="BackGround/LevelPanel/Lvl2Button/Icon"]
 position = Vector2( 30, -50 )
-scale = Vector2( 1e-05, 1e-05 )
 texture = ExtResource( 8 )
 
 [node name="Lvl3Button" type="Button" parent="BackGround/LevelPanel"]
@@ -89,7 +87,6 @@ texture = ExtResource( 3 )
 
 [node name="scoreBubble" type="Sprite" parent="BackGround/LevelPanel/Lvl3Button/Icon"]
 position = Vector2( 30, -50 )
-scale = Vector2( 1e-05, 1e-05 )
 texture = ExtResource( 8 )
 
 [node name="Lvl4Button" type="Button" parent="BackGround/LevelPanel"]
@@ -109,7 +106,6 @@ texture = ExtResource( 3 )
 
 [node name="scoreBubble" type="Sprite" parent="BackGround/LevelPanel/Lvl4Button/Icon"]
 position = Vector2( 30, -50 )
-scale = Vector2( 1e-05, 1e-05 )
 texture = ExtResource( 8 )
 
 [node name="Lvl5Button" type="Button" parent="BackGround/LevelPanel"]
@@ -129,7 +125,6 @@ texture = ExtResource( 3 )
 
 [node name="scoreBubble" type="Sprite" parent="BackGround/LevelPanel/Lvl5Button/Icon"]
 position = Vector2( 30, -50 )
-scale = Vector2( 1e-05, 1e-05 )
 texture = ExtResource( 8 )
 
 [node name="Lvl6Button" type="Button" parent="BackGround/LevelPanel"]
@@ -149,7 +144,6 @@ texture = ExtResource( 3 )
 
 [node name="scoreBubble" type="Sprite" parent="BackGround/LevelPanel/Lvl6Button/Icon"]
 position = Vector2( 30, -50 )
-scale = Vector2( 1e-05, 1e-05 )
 texture = ExtResource( 8 )
 
 [node name="Lvl7Button" type="Button" parent="BackGround/LevelPanel"]
@@ -169,7 +163,6 @@ texture = ExtResource( 3 )
 
 [node name="scoreBubble" type="Sprite" parent="BackGround/LevelPanel/Lvl7Button/Icon"]
 position = Vector2( 30, -50 )
-scale = Vector2( 1e-05, 1e-05 )
 texture = ExtResource( 8 )
 
 [node name="Lvl8Button" type="Button" parent="BackGround/LevelPanel"]
@@ -189,7 +182,6 @@ texture = ExtResource( 3 )
 
 [node name="scoreBubble" type="Sprite" parent="BackGround/LevelPanel/Lvl8Button/Icon"]
 position = Vector2( 30, -50 )
-scale = Vector2( 1e-05, 1e-05 )
 texture = ExtResource( 8 )
 
 [node name="NextChapterButton" type="Button" parent="BackGround/LevelPanel"]
