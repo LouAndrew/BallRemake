@@ -5,15 +5,18 @@ var currentLevel:int = 0
 var newLevel:int = 0
 var currentScene:String = LevelScenes[0]
 var level:int = 1
+
 func _process(_delta: float) -> void:
 	SwitchLevel()
+	
 func SwitchLevel():
 	if newLevel <= LevelScenes.size():
 		if newLevel > currentLevel:
 			currentLevel += 1
 			currentScene = LevelScenes[currentLevel]
 			get_tree().change_scene(LevelScenes[currentLevel])
-			
+		if newLevel < currentLevel:
+			currentLevel -= 1
 	if currentLevel >= level:
 		level += 1
 		

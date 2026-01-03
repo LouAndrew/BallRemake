@@ -20,7 +20,8 @@ func _ready() -> void:
 	for i in LevelMonitor.level:
 		LvlButtons[i].modulate = Color(1,1,1,1)
 	for i in ScoringSys.scores.size():
-		scoreBubbles[i].set_text(str(ScoringSys.scores[i]))
+		scoreBubbles[i].set_text(str(ScoringSys.deathScore[i]))
+		
 func _process(delta: float) -> void:
 	ButtonUtilisation(delta)
 	GoToPosition(delta)
@@ -28,18 +29,22 @@ func _process(delta: float) -> void:
 func _on_Button1_pressed():
 	if LevelMonitor.level >= 1:
 		get_tree().change_scene("res://Scenes/PlayScene.tscn")
+		LevelMonitor.newLevel = 0
 	
 func _on_Button2_pressed():
 	if LevelMonitor.level >= 2:
 		get_tree().change_scene("res://Scenes/PlayScene2.tscn")
+		LevelMonitor.newLevel = 1
 	
 func _on_Button3_pressed():
 	if LevelMonitor.level >= 3:
 		get_tree().change_scene("res://Scenes/PlayScene3.tscn")
+		LevelMonitor.newLevel = 2
 	
 func _on_Button4_pressed():
 	if LevelMonitor.level >= 4:
 		get_tree().change_scene("res://Scenes/PlayScene4.tscn")
+		LevelMonitor.newLevel = 3
 	
 func _on_Button5_pressed():
 	pass

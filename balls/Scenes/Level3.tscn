@@ -93,7 +93,7 @@ rotation = -3.13507
 
 [node name="Spike4" parent="SpikeContainor" instance=ExtResource( 4 )]
 position = Vector2( 5235.06, 608 )
-rotation = -0.00138626
+rotation = 3.14159
 
 [node name="Spike5" parent="SpikeContainor" instance=ExtResource( 4 )]
 position = Vector2( 20844.6, 2208.01 )

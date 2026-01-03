@@ -16,6 +16,5 @@ func levelScoreUpdate():
 	for i in newScores.size():
 		if newScores[i] > scores[i]:
 			scores[i] = newScores[i]
-			print(i)
 		if newDeathScore[i] > deathScore[i]:
 			deathScore[i] = newDeathScore[i]

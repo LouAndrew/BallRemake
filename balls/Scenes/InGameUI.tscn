@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Scripts/pauseScript.gd" type="Script" id=1]
 [ext_resource path="res://Assets/pause_icon.png" type="Texture" id=2]
@@ -14,6 +14,7 @@
 [ext_resource path="res://Assets/panel4.png" type="Texture" id=12]
 [ext_resource path="res://Assets/panel8.png" type="Texture" id=13]
 [ext_resource path="res://font1.tres" type="DynamicFont" id=14]
+[ext_resource path="res://Scripts/InGameStatsBoard.gd" type="Script" id=15]
 
 [node name="Node" type="Node"]
 
@@ -32,7 +33,6 @@ anchor_bottom = 1.0
 margin_right = 2.0
 
 [node name="Button" type="Button" parent="CanvasLayer/Control"]
-visible = false
 self_modulate = Color( 1, 1, 1, 0 )
 anchor_left = 0.909
 anchor_top = 0.03
@@ -147,6 +147,7 @@ scale = Vector2( 0.8, 0.8 )
 texture = ExtResource( 12 )
 
 [node name="StatsBoard" type="Node" parent="CanvasLayer/Control"]
+script = ExtResource( 15 )
 
 [node name="ScoreBoard" type="Sprite" parent="CanvasLayer/Control/StatsBoard"]
 position = Vector2( 212, 35 )
@@ -168,6 +169,21 @@ text = "Score:"
 align = 1
 valign = 1
 
+[node name="scoreValue" type="Label" parent="CanvasLayer/Control/StatsBoard/ScoreBoard"]
+anchor_left = 0.62
+anchor_top = -0.068
+anchor_right = 0.979
+anchor_bottom = 1.0
+margin_left = -96.04
+margin_top = -22.008
+margin_right = -35.968
+margin_bottom = 12.0
+rect_scale = Vector2( 0.535, 0.535 )
+custom_fonts/font = ExtResource( 14 )
+text = "0"
+align = 1
+valign = 1
+
 [node name="DeathBoard" type="Sprite" parent="CanvasLayer/Control/StatsBoard"]
 position = Vector2( 520, 35 )
 z_index = -1
@@ -185,6 +201,21 @@ margin_bottom = 18.992
 rect_scale = Vector2( 0.494, 0.494 )
 custom_fonts/font = ExtResource( 14 )
 text = "Deaths:"
+align = 1
+valign = 1
+
+[node name="deathValue" type="Label" parent="CanvasLayer/Control/StatsBoard/DeathBoard"]
+anchor_left = 0.651
+anchor_top = 0.023
+anchor_right = 0.98
+anchor_bottom = 0.932
+margin_left = -95.992
+margin_top = -22.012
+margin_right = -31.16
+margin_bottom = 18.992
+rect_scale = Vector2( 0.494, 0.494 )
+custom_fonts/font = ExtResource( 14 )
+text = "0"
 align = 1
 valign = 1
 

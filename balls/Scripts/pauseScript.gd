@@ -48,6 +48,8 @@ func LeaveGame():
 	$LeaveMenu.visible = true
 	
 func reloadLevel():
+	ScoringSys.newScores[LevelMonitor.currentLevel] = 0
+	ScoringSys.newDeathScore[LevelMonitor.currentLevel] = 0 
 	get_tree().reload_current_scene()
 	get_tree().paused = false
 	

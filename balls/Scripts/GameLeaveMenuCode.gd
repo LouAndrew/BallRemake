@@ -13,6 +13,8 @@ func _process(delta: float) -> void:
 	showMenu(delta)
 	buttonUtilisation(delta)
 func _on_yes_pressed():
+	ScoringSys.newScores[LevelMonitor.currentLevel] = 0
+	ScoringSys.newDeathScore[LevelMonitor.currentLevel] = 0 
 	get_tree().paused = false
 	get_tree().change_scene("res://Scenes/MenuScene.tscn")
 	
