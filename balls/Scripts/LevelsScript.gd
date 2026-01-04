@@ -4,6 +4,10 @@ onready var LvlButtons:Array = [$Lvl1Button,$Lvl2Button,$Lvl3Button,$Lvl4Button,
 onready var Buttons:Array = [$HomeButton,$NextChapterButton]
 
 onready var scoreBubbles:Array = [$Lvl1Button/Icon/scoreBubble/score,$Lvl2Button/Icon/scoreBubble/score,$Lvl3Button/Icon/scoreBubble/score,$Lvl4Button/Icon/scoreBubble/score,$Lvl5Button/Icon/scoreBubble/score,$Lvl6Button/Icon/scoreBubble/score,$Lvl7Button/Icon/scoreBubble/score,$Lvl8Button/Icon/scoreBubble/score]
+onready var buttonHoverSounds:Array = [$Lvl1Button/hoverSound,$Lvl2Button/hoverSound,$Lvl3Button/hoverSound,$Lvl4Button/hoverSound,$Lvl5Button/hoverSound,$Lvl6Button/hoverSound,$Lvl7Button/hoverSound,$Lvl8Button/hoverSound,$HomeButton/hoverSound,$NextChapterButton/hoverSound]
+
+var ButtonNum:Array = [1,1,1,1,1,1,1,1,1,1]
+
 func _ready() -> void:
 	LvlButtons[0].connect("pressed",self,"_on_Button1_pressed")
 	LvlButtons[1].connect("pressed",self,"_on_Button2_pressed")
@@ -66,54 +70,94 @@ func _on_nextChapterButton_pressed():
 	
 func ButtonUtilisation(delta):
 	if $Lvl1Button/Icon.global_position.distance_to(get_global_mouse_position()) <= 40:
+		if ButtonNum[0] < 2:
+			buttonHoverSounds[0].playing = true
+			ButtonNum[0] += 1
 		interpolateElScale(delta,Vector2(0.944,0.788),$Lvl1Button/Icon)
 	else:
 		interpolateElScale(delta,Vector2(0.844,0.688),$Lvl1Button/Icon)
+		ButtonNum[0] = 1
 		
 	if $Lvl2Button/Icon.global_position.distance_to(get_global_mouse_position()) <= 40:
+		if ButtonNum[1] < 2:
+			buttonHoverSounds[1].playing = true
+			ButtonNum[1] += 1
 		interpolateElScale(delta,Vector2(0.944,0.788),$Lvl2Button/Icon)
 	else:
 		interpolateElScale(delta,Vector2(0.844,0.688),$Lvl2Button/Icon)
+		ButtonNum[1] = 1
 		
 	if $Lvl3Button/Icon.global_position.distance_to(get_global_mouse_position()) <= 40:
+		if ButtonNum[2] < 2:
+			buttonHoverSounds[2].playing = true
+			ButtonNum[2] += 1
 		interpolateElScale(delta,Vector2(0.944,0.788),$Lvl3Button/Icon)
 	else:
 		interpolateElScale(delta,Vector2(0.844,0.688),$Lvl3Button/Icon)
+		ButtonNum[2] = 1
 		
 	if $Lvl4Button/Icon.global_position.distance_to(get_global_mouse_position()) <= 40:
+		if ButtonNum[3] < 2:
+			buttonHoverSounds[3].playing = true
+			ButtonNum[3] += 1
 		interpolateElScale(delta,Vector2(0.944,0.788),$Lvl4Button/Icon)
 	else:
 		interpolateElScale(delta,Vector2(0.844,0.688),$Lvl4Button/Icon)
+		ButtonNum[3] = 1
 		
 	if $Lvl5Button/Icon.global_position.distance_to(get_global_mouse_position()) <= 40:
+		if ButtonNum[4] < 2:
+			buttonHoverSounds[4].playing = true
+			ButtonNum[4] += 1
 		interpolateElScale(delta,Vector2(0.944,0.788),$Lvl5Button/Icon)
 	else:
 		interpolateElScale(delta,Vector2(0.844,0.688),$Lvl5Button/Icon)
+		ButtonNum[4] = 1
 		
 	if $Lvl6Button/Icon.global_position.distance_to(get_global_mouse_position()) <= 40:
+		if ButtonNum[5] < 2:
+			buttonHoverSounds[5].playing = true
+			ButtonNum[5] += 1
 		interpolateElScale(delta,Vector2(0.944,0.788),$Lvl6Button/Icon)
 	else:
 		interpolateElScale(delta,Vector2(0.844,0.688),$Lvl6Button/Icon)
+		ButtonNum[5] = 1
 		
 	if $Lvl7Button/Icon.global_position.distance_to(get_global_mouse_position()) <= 40:
+		if ButtonNum[6] < 2:
+			buttonHoverSounds[6].playing = true
+			ButtonNum[6] += 1
 		interpolateElScale(delta,Vector2(0.944,0.788),$Lvl7Button/Icon)
 	else:
 		interpolateElScale(delta,Vector2(0.844,0.688),$Lvl7Button/Icon)
+		ButtonNum[6] = 1
 		
 	if $Lvl8Button/Icon.global_position.distance_to(get_global_mouse_position()) <= 40:
+		if ButtonNum[7] < 2:
+			buttonHoverSounds[7].playing = true
+			ButtonNum[7] += 1
 		interpolateElScale(delta,Vector2(0.944,0.788),$Lvl8Button/Icon)
 	else:
 		interpolateElScale(delta,Vector2(0.844,0.688),$Lvl8Button/Icon)
+		ButtonNum[7] = 1
 		
 	if $HomeButton/Sprite.global_position.distance_to(get_global_mouse_position()) <= 40:
+		if ButtonNum[8] < 2:
+			buttonHoverSounds[8].playing = true
+			ButtonNum[8] += 1
 		interpolateElScale(delta,Vector2(0.741,0.678),$HomeButton/Sprite)
 	else:
 		interpolateElScale(delta,Vector2(0.641,0.578),$HomeButton/Sprite)
+		ButtonNum[8] = 1
 		
 	if $NextChapterButton/Sprite.global_position.distance_to(get_global_mouse_position()) <= 40:
 		interpolateElScale(delta,Vector2(0.944,0.788),$NextChapterButton/Sprite)
+		if ButtonNum[9] < 2:
+			buttonHoverSounds[9].playing = true
+			ButtonNum[9] += 1
 	else:
 		interpolateElScale(delta,Vector2(0.844,0.688),$NextChapterButton/Sprite)
+		ButtonNum[9] = 1
 		
 func GoToPosition(delta):
 	interpolateElPosition(delta,Vector2(54,43),$Lvl1Button/Icon)

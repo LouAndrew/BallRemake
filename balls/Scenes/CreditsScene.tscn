@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Assets/panel2.png" type="Texture" id=1]
 [ext_resource path="res://Assets/home.png" type="Texture" id=2]
 [ext_resource path="res://Scripts/CreditsSceneCode.gd" type="Script" id=3]
 [ext_resource path="res://font1.tres" type="DynamicFont" id=4]
+[ext_resource path="res://Sounds/buttonHover.wav" type="AudioStream" id=5]
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
@@ -33,6 +34,10 @@ margin_left = -64.0
 margin_top = -64.0
 margin_right = -64.0
 margin_bottom = -64.056
+
+[node name="hoverSound" type="AudioStreamPlayer" parent="ColorRect/panel/Homebtn"]
+stream = ExtResource( 5 )
+pitch_scale = 1.09
 
 [node name="Title1" type="Label" parent="ColorRect/panel"]
 anchor_left = 0.129

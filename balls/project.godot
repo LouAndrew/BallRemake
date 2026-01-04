@@ -28,6 +28,7 @@ config/icon="res://Assets/ICON.png"
 
 LevelMonitor="*res://Scripts/LevelMonitor.gd"
 ScoringSys="*res://Scripts/ScoringSys.gd"
+BgMusic="*res://Scenes/BGMusic.tscn"
 
 [display]
 
