@@ -2,6 +2,10 @@ extends KinematicBody2D
 
 class_name Player
 
+onready var landingSound:AudioStreamPlayer = $Sounds/landingOnGround
+onready var deathSound:AudioStreamPlayer = $Sounds/deathSound
+onready var jumpSound:AudioStreamPlayer = $Sounds/jumpSound
+
 var velocity:Vector2 = Vector2.UP
 var gravity:int = 1000
 var speed:int = 400
@@ -17,7 +21,6 @@ var FallOffDeath:String = "FallOffDeath"
 
 var deathCounter:Array = [[0],[0]]
 
-signal showDeathStats()
 func _ready() -> void:
 	pass
 func _process(_delta: float) -> void:
@@ -53,6 +56,7 @@ func moveMent():
 func Jump():
 	if Input.is_action_just_pressed("ui_up"):
 		if jumpCount < 1:
+			jumpSound.playing = true
 			velocity.y = jumpForce
 			jumpCount += 1
 			
@@ -73,7 +77,7 @@ func deathDetect():
 	var overLappingBodies = $Area2D.get_overlapping_bodies()
 	for bod in overLappingBodies:
 		if bod.is_in_group("Spike"):
-			emit_signal("showDeathStats")
+			deathSound.playing = true
 			DeathCause = SpikeDeath
 			deathCounter[0][0]  += 1
 			ScoringSys.newDeathScore[LevelMonitor.currentLevel] += 1
@@ -82,7 +86,7 @@ func FallOffDetect():
 	var overLappiingAreas = $Area2D.get_overlapping_areas()
 	for area in overLappiingAreas:
 		if area.is_in_group("fallOffs"):
-			emit_signal("showDeathStats")
+			deathSound.playing = true
 			DeathCause = FallOffDeath
 			deathCounter[1][0]  += 1
 			ScoringSys.newDeathScore[LevelMonitor.currentLevel] += 1
@@ -106,3 +110,4 @@ func LevelComplete():
 		if area.is_in_group("LevelEnd"):
 			set_physics_process(false)
 			finishedLevel = true
+			

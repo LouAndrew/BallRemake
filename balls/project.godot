@@ -33,6 +33,7 @@ BgMusic="*res://Scenes/BGMusic.tscn"
 [display]
 
 window/size/resizable=false
+window/size/borderless=true
 window/handheld/orientation="portrait"
 
 [gui]

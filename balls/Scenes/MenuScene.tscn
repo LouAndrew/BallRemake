@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Assets/panel5.png" type="Texture" id=1]
 [ext_resource path="res://Assets/tick.png" type="Texture" id=2]
@@ -16,6 +16,7 @@
 [ext_resource path="res://Assets/panel7.png" type="Texture" id=14]
 [ext_resource path="res://font1.tres" type="DynamicFont" id=15]
 [ext_resource path="res://Scripts/StatsBoardCode.gd" type="Script" id=16]
+[ext_resource path="res://Sounds/BackGroundMusic1.wav" type="AudioStream" id=17]
 [ext_resource path="res://Sounds/buttonHover.wav" type="AudioStream" id=18]
 
 [node name="Control" type="Control"]
@@ -288,3 +289,6 @@ custom_fonts/font = ExtResource( 15 )
 text = "0"
 align = 1
 valign = 1
+
+[node name="sound" type="AudioStreamPlayer" parent="Control"]
+stream = ExtResource( 17 )

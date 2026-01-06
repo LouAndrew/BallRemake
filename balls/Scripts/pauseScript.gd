@@ -5,7 +5,6 @@ onready var ResumeButton:Button = $Button2
 onready var HomeButton:Button = $Button3
 onready var RetryButton:Button = $RetryBtn
 
-var showDeathStats:bool = false
 var deathNum:int = 0 
 
 onready var player = get_tree().get_nodes_in_group("player")[0]
@@ -20,14 +19,10 @@ func _ready():
 	HomeButton.connect("pressed",self,"LeaveGame")
 	RetryButton.connect("pressed",self,"reloadLevel")
 	
-	player.connect("showDeathStats",self,"showDthStat")
 	
 func _process(delta: float) -> void:
 	buttonUtilisation(delta)
-	showDeathStatsDisplay(delta)
 	
-func showDthStat():
-	showDeathStats = true
 	
 func PauseGame():
 	get_tree().paused = true
@@ -74,18 +69,6 @@ func buttonUtilisation(delta):
 	else:
 		interpolateElScale(delta,Vector2(0.68,0.625),$RetryBtn/Sprite)
 		
-func showDeathStatsDisplay(delta):
-	if showDeathStats:
-		var _deathTotal:int = 0
-		$DeathCountDisplay.visible = true
-		interpolateEl(delta,Vector2(808,300),$DeathCountDisplay)
-		yield(get_tree().create_timer(1.0),"timeout")
-		_deathTotal = player.deathCounter[0][0] + player.deathCounter[1][0]
-		$DeathCountDisplay.visible = false
-		if $DeathCountDisplay.visible == false:
-			$DeathCountDisplay.global_position = Vector2(808,382)
-			showDeathStats = false
-
 func interpolateEl(delta,targetPosition:Vector2,Ui_element):
 	var t := 0.1
 	t += delta * 0.4

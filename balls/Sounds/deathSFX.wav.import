@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/sound4.wav-4bf020b7fed439126faa7c7218985edc.sample"
+path="res://.import/deathSFX.wav-94c89040689ce9be62f4b1510dc74ac4.sample"
 
 [deps]
 
-source_file="res://Sounds/sound4.wav"
-dest_files=[ "res://.import/sound4.wav-4bf020b7fed439126faa7c7218985edc.sample" ]
+source_file="res://Sounds/deathSFX.wav"
+dest_files=[ "res://.import/deathSFX.wav-94c89040689ce9be62f4b1510dc74ac4.sample" ]
 
 [params]
 
