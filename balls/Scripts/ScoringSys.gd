@@ -6,6 +6,8 @@ var newScores:Array = [0,0,0,0,0,0,0,0]
 var deathScore:Array = [0,0,0,0,0,0,0,0]
 var newDeathScore:Array = [0,0,0,0,0,0,0,0]
 
+var lives:int = 1
+
 func _ready() -> void:
 	pass 
 	

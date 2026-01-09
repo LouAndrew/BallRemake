@@ -3,6 +3,8 @@ extends Node
 onready var scoreLabel:Label = $ScoreBoard/scoreValue
 onready var deathLabel:Label = $DeathBoard/deathValue
 
+onready var livesText:Label = $sprite/livesLabel
+
 func _ready() -> void:
 	for i in ScoringSys.scores.size():
 		ScoringSys.newDeathScore[i] = 0
@@ -10,6 +12,7 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	displayStats()
+	livesText.set_text("Lives: " + str(ScoringSys.lives))
 	
 func displayStats():
 	scoreLabel.set_text(str(ScoringSys.newScores[LevelMonitor.currentLevel]))

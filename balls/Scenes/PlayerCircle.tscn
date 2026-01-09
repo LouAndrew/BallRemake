@@ -58,3 +58,6 @@ stream = ExtResource( 5 )
 [node name="jumpSound" type="AudioStreamPlayer" parent="Sounds"]
 stream = ExtResource( 4 )
 volume_db = 16.087
+
+[node name="Position2D" type="Position2D" parent="."]
+position = Vector2( 0, -250 )

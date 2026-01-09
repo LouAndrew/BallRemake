@@ -6,6 +6,8 @@ onready var Buttons:Array = [$HomeButton,$NextChapterButton]
 onready var scoreBubbles:Array = [$Lvl1Button/Icon/scoreBubble/score,$Lvl2Button/Icon/scoreBubble/score,$Lvl3Button/Icon/scoreBubble/score,$Lvl4Button/Icon/scoreBubble/score,$Lvl5Button/Icon/scoreBubble/score,$Lvl6Button/Icon/scoreBubble/score,$Lvl7Button/Icon/scoreBubble/score,$Lvl8Button/Icon/scoreBubble/score]
 onready var buttonHoverSounds:Array = [$Lvl1Button/hoverSound,$Lvl2Button/hoverSound,$Lvl3Button/hoverSound,$Lvl4Button/hoverSound,$Lvl5Button/hoverSound,$Lvl6Button/hoverSound,$Lvl7Button/hoverSound,$Lvl8Button/hoverSound,$HomeButton/hoverSound,$NextChapterButton/hoverSound]
 
+onready var message:Sprite = $Message
+
 var ButtonNum:Array = [1,1,1,1,1,1,1,1,1,1]
 
 func _ready() -> void:
@@ -66,7 +68,9 @@ func _on_homeButton_pressed():
 	get_tree().change_scene("res://Scenes/MenuScene.tscn")
 	
 func _on_nextChapterButton_pressed():
-	pass
+	message.visible = true
+	yield(get_tree().create_timer(1.0),"timeout")
+	message.visible = false
 	
 func ButtonUtilisation(delta):
 	if $Lvl1Button/Icon.global_position.distance_to(get_global_mouse_position()) <= 40:

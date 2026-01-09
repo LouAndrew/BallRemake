@@ -37,6 +37,7 @@ margin_bottom = -64.056
 
 [node name="hoverSound" type="AudioStreamPlayer" parent="ColorRect/panel/Homebtn"]
 stream = ExtResource( 5 )
+volume_db = -10.0
 pitch_scale = 1.09
 
 [node name="Title1" type="Label" parent="ColorRect/panel"]

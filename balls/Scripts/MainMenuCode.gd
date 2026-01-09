@@ -24,19 +24,19 @@ func _process(delta: float) -> void:
 	ButtonUtilisation(delta)
 	GoToPosition(delta)
 func PlayGame():
-	emit_signal("makeTransitionSound")
+	#emit_signal("makeTransitionSound")
 	get_tree().change_scene(LevelMonitor.currentScene)
 	
 func LevelsScene():
-	emit_signal("makeTransitionSound")
+	#emit_signal("makeTransitionSound")
 	get_tree().change_scene("res://Scenes/LevelsScene.tscn")
 	
 func CreditsScene():
-	emit_signal("makeTransitionSound")
+	#emit_signal("makeTransitionSound")
 	get_tree().change_scene("res://Scenes/CreditsScene.tscn")
 	
 func SettingsScene():
-	emit_signal("makeTransitionSound")
+	#emit_signal("makeTransitionSound")
 	get_tree().change_scene("res://Scenes/SettingsScene.tscn")
 	
 func GoToPosition(delta):
@@ -49,7 +49,7 @@ func GoToPosition(delta):
 	
 	interpolateElScale(delta,Vector2(1,1),$Logo)
 func LeaveGame():
-	emit_signal("makeTransitionSound")
+	#emit_signal("makeTransitionSound")
 	$LeaveMenu.visible = true
 	
 func ButtonUtilisation(delta):

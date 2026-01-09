@@ -19,6 +19,8 @@ func SwitchLevel():
 			currentLevel -= 1
 	if currentLevel >= level:
 		level += 1
+		ScoringSys.lives += 1
+		print(ScoringSys.lives)
 		
 	if newLevel == LevelScenes.size():
 		get_tree().free()

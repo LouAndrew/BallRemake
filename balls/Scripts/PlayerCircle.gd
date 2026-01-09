@@ -29,6 +29,7 @@ func _process(_delta: float) -> void:
 	FallOffDetect()
 	RespawnPointDeterminor()
 	LevelComplete()
+	newSpawnPoint()
 
 func _physics_process(delta: float) -> void:
 	deathDetect()
@@ -111,3 +112,10 @@ func LevelComplete():
 			set_physics_process(false)
 			finishedLevel = true
 			
+func newSpawnPoint():
+	if Input.is_action_just_pressed("ui_accept") and ScoringSys.lives > 0:
+		var spawnPoint = $Position2D
+		var newPoint = preload("res://Scenes/newSpawnPoint.tscn").instance()
+		get_parent().add_child(newPoint)
+		newPoint.global_transform = spawnPoint.global_transform
+		ScoringSys.lives -= 1

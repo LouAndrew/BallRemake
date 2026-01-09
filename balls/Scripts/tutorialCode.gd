@@ -8,19 +8,23 @@ func _ready() -> void:
 	tipLabel.set_text(tips[0])
 
 func _process(_delta: float) -> void:
-	if tipLabel.text == tips[0]:
-		if Input.is_action_just_pressed("ui_up"):
-			tipLabel.set_text(tips[1])
-			
-	if tipLabel.text == tips[1]:
-		if Input.is_action_just_pressed("ui_down"):
-			tipLabel.set_text(tips[2])
-			
-	if tipLabel.text == tips[2]:
-		if Input.is_action_just_pressed("ui_left"):
-			tipLabel.set_text(tips[3])
-			
-	if tipLabel.text == tips[3]:
-		if Input.is_action_just_pressed("ui_right"):
-			title.visible = false
-			tipLabel.visible = false
+	if LevelMonitor.currentLevel == 0:
+		if tipLabel.text == tips[0]:
+			if Input.is_action_just_pressed("ui_up"):
+				tipLabel.set_text(tips[1])
+				
+		if tipLabel.text == tips[1]:
+			if Input.is_action_just_pressed("ui_down"):
+				tipLabel.set_text(tips[2])
+				
+		if tipLabel.text == tips[2]:
+			if Input.is_action_just_pressed("ui_left"):
+				tipLabel.set_text(tips[3])
+				
+		if tipLabel.text == tips[3]:
+			if Input.is_action_just_pressed("ui_right"):
+				title.visible = false
+				tipLabel.visible = false
+	else:
+		tipLabel.visible = false
+		title.visible = false
