@@ -3,8 +3,7 @@ extends Sprite
 onready var NoButton:Button = $NoButton
 onready var YesButton:Button = $YesButton
 
-onready var streamPlayer2:AudioStreamPlayer = $NoButton/hoverSound
-
+onready var streamPlayer2:AudioStreamPlayer = $"../hoverSound"
 var buttonNum:Array = [1,1]
 func _ready() -> void:
 	YesButton.connect("pressed",self,"_on_yes_pressed")

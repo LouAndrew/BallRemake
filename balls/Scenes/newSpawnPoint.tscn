@@ -3,6 +3,6 @@
 [ext_resource path="res://Assets/pointBubble.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/newSpawnPoint.gd" type="Script" id=2]
 
-[node name="newSpawnPoint" type="Sprite"]
+[node name="newSpawnPoint" type="Sprite" groups=["newPoint"]]
 texture = ExtResource( 1 )
 script = ExtResource( 2 )

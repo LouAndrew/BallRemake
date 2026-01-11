@@ -22,6 +22,7 @@ _global_script_class_icons={
 
 config/name="Two Man"
 run/main_scene="res://Scenes/MenuScene.tscn"
+boot_splash/bg_color=Color( 0.0352941, 0.0352941, 0.0352941, 1 )
 config/icon="res://Assets/ICON.png"
 
 [autoload]
@@ -35,6 +36,7 @@ BgMusic="*res://Scenes/BGMusic.tscn"
 window/size/resizable=false
 window/size/borderless=true
 window/handheld/orientation="portrait"
+mouse_cursor/custom_image="res://Assets/MouseBall.png"
 
 [gui]
 

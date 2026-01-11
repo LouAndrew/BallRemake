@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Scripts/pauseScript.gd" type="Script" id=1]
 [ext_resource path="res://Assets/pause_icon.png" type="Texture" id=2]
@@ -17,6 +17,7 @@
 [ext_resource path="res://Scripts/InGameStatsBoard.gd" type="Script" id=15]
 [ext_resource path="res://Scripts/tutorialCode.gd" type="Script" id=16]
 [ext_resource path="res://Assets/panel1.png" type="Texture" id=17]
+[ext_resource path="res://Sounds/buttonHover.wav" type="AudioStream" id=18]
 
 [node name="Node" type="Node"]
 
@@ -145,9 +146,12 @@ texture = ExtResource( 11 )
 script = ExtResource( 15 )
 
 [node name="ScoreBoard" type="Sprite" parent="CanvasLayer/Control/StatsBoard"]
-position = Vector2( 212, 35 )
+position = Vector2( 158, 35 )
 z_index = -1
 texture = ExtResource( 13 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="scoreLabel" type="Label" parent="CanvasLayer/Control/StatsBoard/ScoreBoard"]
 anchor_left = 0.062
@@ -180,9 +184,12 @@ align = 1
 valign = 1
 
 [node name="DeathBoard" type="Sprite" parent="CanvasLayer/Control/StatsBoard"]
-position = Vector2( 520, 35 )
+position = Vector2( 477, 35 )
 z_index = -1
 texture = ExtResource( 13 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="scoreLabel" type="Label" parent="CanvasLayer/Control/StatsBoard/DeathBoard"]
 anchor_left = 0.047
@@ -216,21 +223,24 @@ valign = 1
 
 [node name="sprite" type="Sprite" parent="CanvasLayer/Control/StatsBoard"]
 self_modulate = Color( 0, 0, 0, 1 )
-position = Vector2( 80, 128.25 )
-scale = Vector2( 0.533333, 0.709876 )
+position = Vector2( 758, 35 )
+scale = Vector2( 0.76, 0.67 )
 texture = ExtResource( 17 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="livesLabel" type="Label" parent="CanvasLayer/Control/StatsBoard/sprite"]
 anchor_left = -0.087
 anchor_right = 66.1
 anchor_bottom = 40.74
-margin_left = -117.87
-margin_top = -39.7957
-margin_right = -15664.8
-margin_bottom = -3243.74
-rect_scale = Vector2( 0.831, 0.739 )
+margin_left = -92.7764
+margin_top = -33.9964
+margin_right = -15569.7
+margin_bottom = -3237.94
+rect_scale = Vector2( 0.563, 0.606 )
 custom_fonts/font = ExtResource( 14 )
-text = "Lives: 00"
+text = "Spawners: 00"
 align = 1
 valign = 1
 
@@ -264,6 +274,11 @@ margin_bottom = 73.9999
 rect_scale = Vector2( 0.32, 0.32 )
 custom_fonts/font = ExtResource( 14 )
 valign = 1
+
+[node name="hoverSound" type="AudioStreamPlayer" parent="CanvasLayer/Control"]
+stream = ExtResource( 18 )
+volume_db = -9.043
+pitch_scale = 1.09
 
 [node name="Control" parent="." instance=ExtResource( 5 )]
 

@@ -89,11 +89,6 @@ text = "1"
 align = 1
 valign = 1
 
-[node name="hoverSound" type="AudioStreamPlayer" parent="BackGround/LevelPanel/Lvl1Button"]
-stream = ExtResource( 10 )
-volume_db = -10.0
-pitch_scale = 1.09
-
 [node name="Lvl2Button" type="Button" parent="BackGround/LevelPanel"]
 modulate = Color( 1, 1, 1, 0.5 )
 self_modulate = Color( 1, 1, 1, 0 )
@@ -147,11 +142,6 @@ custom_fonts/font = ExtResource( 9 )
 text = "2"
 align = 1
 valign = 1
-
-[node name="hoverSound" type="AudioStreamPlayer" parent="BackGround/LevelPanel/Lvl2Button"]
-stream = ExtResource( 10 )
-volume_db = -10.0
-pitch_scale = 1.09
 
 [node name="Lvl3Button" type="Button" parent="BackGround/LevelPanel"]
 modulate = Color( 1, 1, 1, 0.5 )
@@ -207,11 +197,6 @@ text = "3"
 align = 1
 valign = 1
 
-[node name="hoverSound" type="AudioStreamPlayer" parent="BackGround/LevelPanel/Lvl3Button"]
-stream = ExtResource( 10 )
-volume_db = -10.0
-pitch_scale = 1.09
-
 [node name="Lvl4Button" type="Button" parent="BackGround/LevelPanel"]
 modulate = Color( 1, 1, 1, 0.5 )
 self_modulate = Color( 1, 1, 1, 0 )
@@ -265,11 +250,6 @@ custom_fonts/font = ExtResource( 9 )
 text = "4"
 align = 1
 valign = 1
-
-[node name="hoverSound" type="AudioStreamPlayer" parent="BackGround/LevelPanel/Lvl4Button"]
-stream = ExtResource( 10 )
-volume_db = -10.0
-pitch_scale = 1.09
 
 [node name="Lvl5Button" type="Button" parent="BackGround/LevelPanel"]
 modulate = Color( 1, 1, 1, 0.5 )
@@ -325,11 +305,6 @@ text = "5"
 align = 1
 valign = 1
 
-[node name="hoverSound" type="AudioStreamPlayer" parent="BackGround/LevelPanel/Lvl5Button"]
-stream = ExtResource( 10 )
-volume_db = -10.0
-pitch_scale = 1.09
-
 [node name="Lvl6Button" type="Button" parent="BackGround/LevelPanel"]
 modulate = Color( 1, 1, 1, 0.5 )
 self_modulate = Color( 1, 1, 1, 0 )
@@ -383,11 +358,6 @@ custom_fonts/font = ExtResource( 9 )
 text = "6"
 align = 1
 valign = 1
-
-[node name="hoverSound" type="AudioStreamPlayer" parent="BackGround/LevelPanel/Lvl6Button"]
-stream = ExtResource( 10 )
-volume_db = -10.0
-pitch_scale = 1.09
 
 [node name="Lvl7Button" type="Button" parent="BackGround/LevelPanel"]
 modulate = Color( 1, 1, 1, 0.5 )
@@ -443,11 +413,6 @@ text = "7"
 align = 1
 valign = 1
 
-[node name="hoverSound" type="AudioStreamPlayer" parent="BackGround/LevelPanel/Lvl7Button"]
-stream = ExtResource( 10 )
-volume_db = -10.0
-pitch_scale = 1.09
-
 [node name="Lvl8Button" type="Button" parent="BackGround/LevelPanel"]
 modulate = Color( 1, 1, 1, 0.5 )
 self_modulate = Color( 1, 1, 1, 0 )
@@ -502,11 +467,6 @@ text = "8"
 align = 1
 valign = 1
 
-[node name="hoverSound" type="AudioStreamPlayer" parent="BackGround/LevelPanel/Lvl8Button"]
-stream = ExtResource( 10 )
-volume_db = -10.0
-pitch_scale = 1.09
-
 [node name="NextChapterButton" type="Button" parent="BackGround/LevelPanel"]
 self_modulate = Color( 1, 1, 1, 0 )
 anchor_left = 1.084
@@ -523,11 +483,6 @@ position = Vector2( 48, 49 )
 scale = Vector2( 0.75, 0.609375 )
 texture = ExtResource( 5 )
 
-[node name="hoverSound" type="AudioStreamPlayer" parent="BackGround/LevelPanel/NextChapterButton"]
-stream = ExtResource( 10 )
-volume_db = -10.0
-pitch_scale = 1.09
-
 [node name="HomeButton" type="Button" parent="BackGround/LevelPanel"]
 self_modulate = Color( 1, 1, 1, 0 )
 margin_left = -426.0
@@ -539,11 +494,6 @@ margin_bottom = -229.0
 position = Vector2( 41, 27 )
 scale = Vector2( 0.640625, 0.578125 )
 texture = ExtResource( 6 )
-
-[node name="hoverSound" type="AudioStreamPlayer" parent="BackGround/LevelPanel/HomeButton"]
-stream = ExtResource( 10 )
-volume_db = -10.0
-pitch_scale = 1.09
 
 [node name="Logo" type="Sprite" parent="BackGround/LevelPanel"]
 position = Vector2( 442, -232 )
@@ -571,3 +521,8 @@ custom_fonts/font = ExtResource( 9 )
 text = "Still in development"
 align = 1
 valign = 1
+
+[node name="hoverSound" type="AudioStreamPlayer" parent="BackGround/LevelPanel"]
+stream = ExtResource( 10 )
+volume_db = -10.0
+pitch_scale = 1.09

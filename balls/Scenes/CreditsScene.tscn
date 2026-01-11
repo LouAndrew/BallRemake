@@ -70,3 +70,43 @@ text = "Kaweesa Louis Andrew"
 align = 1
 valign = 1
 uppercase = true
+
+[node name="ContactMe" type="Label" parent="ColorRect/panel"]
+anchor_left = 0.168
+anchor_top = 1.149
+anchor_right = 0.526
+anchor_bottom = 1.229
+margin_left = -367.312
+margin_top = -190.918
+margin_right = 198.916
+margin_bottom = -140.478
+rect_scale = Vector2( 0.317, 0.376 )
+custom_fonts/font = ExtResource( 4 )
+text = "Contact me on instagram:"
+align = 1
+valign = 1
+
+[node name="Button" type="Button" parent="ColorRect/panel/ContactMe"]
+self_modulate = Color( 0.294118, 0.294118, 0.294118, 1 )
+anchor_left = 1.084
+anchor_right = 1.849
+anchor_bottom = 0.975
+margin_left = 0.363892
+margin_top = -8.0
+margin_right = 0.178955
+margin_bottom = 0.0250015
+
+[node name="lGDetails" type="Label" parent="ColorRect/panel/ContactMe/Button"]
+anchor_left = 0.115
+anchor_top = 0.061
+anchor_right = 0.862
+anchor_bottom = 0.966
+margin_left = -0.301239
+margin_top = 0.0334539
+margin_right = 146.101
+margin_bottom = 24.2985
+rect_scale = Vector2( 0.764, 0.764 )
+custom_fonts/font = ExtResource( 4 )
+text = "____louis.andrew.____"
+align = 1
+valign = 1

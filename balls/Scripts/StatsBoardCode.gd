@@ -23,5 +23,5 @@ func insertScoreValues():
 	deathScoreLabel.set_text(str(deathTotal))
 	
 func displayLives():
-	livesText.set_text("Lives: "+str(ScoringSys.lives))
+	livesText.set_text("Spawners: "+str(ScoringSys.lives))
 	

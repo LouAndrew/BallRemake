@@ -5,8 +5,10 @@ onready var creditsButton = $creditsButton
 onready var exitButton = $exitButton
 onready var settingsButton = $settingsButton
 
-onready var streamPlayer2:AudioStreamPlayer = $playButton/hoverSound
+onready var streamPlayer2:AudioStreamPlayer = $hoverSound
 onready var backgroundSound:AudioStreamPlayer = $sound
+
+onready var bubbles:Array = [$playButton/Sprite/bubble,$levelsButton/Sprite/bubble,$creditsButton/Sprite/bubble,$exitButton/Sprite/bubble]
 
 var buttonNum:Array = [1,1,1,1,1]
 
@@ -58,8 +60,12 @@ func ButtonUtilisation(delta):
 			streamPlayer2.playing = true
 			buttonNum[0] += 1
 		interpolateElScale(delta,Vector2(0.991,0.827),$playButton/Sprite)
+		interpolateElScale(delta,Vector2(0.8,0.8),bubbles[0])
+		interpolateElPos(delta,Vector2(70,-102),bubbles[0])
 	else:
 		interpolateElScale(delta,Vector2(0.891,0.727),$playButton/Sprite)
+		interpolateElScale(delta,Vector2(0,0),bubbles[0])
+		interpolateElPos(delta,Vector2(0,0),bubbles[0])
 		buttonNum[0] = 1
 		
 	if $levelsButton/Sprite.global_position.distance_to(get_global_mouse_position()) <= 40:
@@ -67,24 +73,38 @@ func ButtonUtilisation(delta):
 			streamPlayer2.playing = true
 			buttonNum[1] += 1
 		interpolateElScale(delta,Vector2(0.991,0.827),$levelsButton/Sprite)
+		interpolateElScale(delta,Vector2(0.8,0.8),bubbles[1])
+		interpolateElPos(delta,Vector2(70,-102),bubbles[1])
 	else:
 		interpolateElScale(delta,Vector2(0.891,0.727),$levelsButton/Sprite)
+		interpolateElScale(delta,Vector2(0,0),bubbles[1])
+		interpolateElPos(delta,Vector2(0,0),bubbles[1])
 		buttonNum[1] = 1
+		
 	if $creditsButton/Sprite.global_position.distance_to(get_global_mouse_position()) <= 40:
 		if buttonNum[2] < 2:
 			streamPlayer2.playing = true
 			buttonNum[2] += 1
 		interpolateElScale(delta,Vector2(0.991,0.827),$creditsButton/Sprite)
+		interpolateElScale(delta,Vector2(0.8,0.8),bubbles[2])
+		interpolateElPos(delta,Vector2(70,-102),bubbles[2])
 	else:
 		interpolateElScale(delta,Vector2(0.891,0.727),$creditsButton/Sprite)
+		interpolateElScale(delta,Vector2(0,0),bubbles[2])
+		interpolateElPos(delta,Vector2(0,0),bubbles[2])
 		buttonNum[2] = 1
+		
 	if $exitButton/Sprite.global_position.distance_to(get_global_mouse_position()) <= 40:
 		if buttonNum[3] < 2:
 			streamPlayer2.playing = true
 			buttonNum[3] += 1
 		interpolateElScale(delta,Vector2(0.991,0.827),$exitButton/Sprite)
+		interpolateElScale(delta,Vector2(0.8,0.8),bubbles[3])
+		interpolateElPos(delta,Vector2(70,-102),bubbles[3])
 	else:
 		interpolateElScale(delta,Vector2(0.891,0.727),$exitButton/Sprite)
+		interpolateElScale(delta,Vector2(0,0),bubbles[3])
+		interpolateElPos(delta,Vector2(0,0),bubbles[3])
 		buttonNum[3] = 1
 		
 	if $settingsButton/Sprite.global_position.distance_to(get_global_mouse_position()) <= 40:

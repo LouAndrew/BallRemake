@@ -9,6 +9,10 @@ var deathNum:int = 0
 
 onready var player = get_tree().get_nodes_in_group("player")[0]
 
+onready var streamPlayer2:AudioStreamPlayer = $hoverSound
+
+var buttonNum:Array = [1,1,1,1]
+
 func _ready():
 	pause_mode = Node.PAUSE_MODE_PROCESS
 # warning-ignore:return_value_discarded
@@ -50,24 +54,40 @@ func reloadLevel():
 	
 func buttonUtilisation(delta):
 	if $Button/Sprite.global_position.distance_to(get_global_mouse_position()) <= 40:
+		if buttonNum[0] < 2 and $Button.visible:
+			streamPlayer2.playing = true
+			buttonNum[0] += 1
 		interpolateElScale(delta,Vector2(0.663,0.538),$Button/Sprite)
 	else:
 		interpolateElScale(delta,Vector2(0.563,0.438),$Button/Sprite)
+		buttonNum[0] = 1
 		
 	if $Button2/Sprite.global_position.distance_to(get_global_mouse_position()) <= 40:
+		if buttonNum[1] < 2 and $Button2.visible:
+			streamPlayer2.playing = true
+			buttonNum[1] += 1
 		interpolateElScale(delta,Vector2(0.663,0.538),$Button2/Sprite)
 	else:
 		interpolateElScale(delta,Vector2(0.563,0.438),$Button2/Sprite)
+		buttonNum[1] = 1
 		
 	if $Button3/Sprite.global_position.distance_to(get_global_mouse_position()) <= 40:
+		if buttonNum[2] < 2 and $Button3.visible:
+			streamPlayer2.playing = true
+			buttonNum[2] += 1
 		interpolateElScale(delta,Vector2(0.663,0.538),$Button3/Sprite)
 	else:
 		interpolateElScale(delta,Vector2(0.563,0.438),$Button3/Sprite)
+		buttonNum[2] = 1
 		
 	if $RetryBtn/Sprite.global_position.distance_to(get_global_mouse_position()) <= 40:
+		if buttonNum[3] < 2 and $RetryBtn.visible:
+			streamPlayer2.playing = true
+			buttonNum[3] += 1
 		interpolateElScale(delta,Vector2(0.78,0.725),$RetryBtn/Sprite)
 	else:
 		interpolateElScale(delta,Vector2(0.68,0.625),$RetryBtn/Sprite)
+		buttonNum[3] = 1
 		
 func interpolateEl(delta,targetPosition:Vector2,Ui_element):
 	var t := 0.1

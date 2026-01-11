@@ -11,16 +11,17 @@ func _process(_delta: float) -> void:
 	
 func SwitchLevel():
 	if newLevel <= LevelScenes.size():
-		if newLevel > currentLevel:
+		if (newLevel !=  LevelScenes.size()) and newLevel > currentLevel:
 			currentLevel += 1
 			currentScene = LevelScenes[currentLevel]
 			get_tree().change_scene(LevelScenes[currentLevel])
+		elif (newLevel ==  LevelScenes.size()):
+			get_tree().quit()
 		if newLevel < currentLevel:
 			currentLevel -= 1
 	if currentLevel >= level:
 		level += 1
 		ScoringSys.lives += 1
-		print(ScoringSys.lives)
 		
 	if newLevel == LevelScenes.size():
 		get_tree().free()

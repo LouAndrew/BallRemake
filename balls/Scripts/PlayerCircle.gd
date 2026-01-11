@@ -98,6 +98,7 @@ func RespawnPointDeterminor():
 		for area in overLappingArea:
 			if area.is_in_group("InitialSpawnPoint"):
 				SpawnPoint = area.position
+				
 func slopDetect():
 	if $RayCast2D.is_colliding() and self.get_floor_angle() >= 1.5:
 		speed = 700
@@ -105,6 +106,7 @@ func slopDetect():
 		speed = 500
 func Respawn():
 	self.position = SpawnPoint
+	
 func LevelComplete():
 	var overLappingAreas = $Area2D.get_overlapping_areas()
 	for area in overLappingAreas:

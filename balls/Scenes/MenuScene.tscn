@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://Assets/panel5.png" type="Texture" id=1]
 [ext_resource path="res://Assets/tick.png" type="Texture" id=2]
@@ -19,6 +19,7 @@
 [ext_resource path="res://Sounds/BackGroundMusic1.wav" type="AudioStream" id=17]
 [ext_resource path="res://Sounds/buttonHover.wav" type="AudioStream" id=18]
 [ext_resource path="res://Assets/panel1.png" type="Texture" id=19]
+[ext_resource path="res://Assets/bubble.png" type="Texture" id=20]
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
@@ -62,16 +63,32 @@ __meta__ = {
 [node name="Sprite" type="Sprite" parent="Control/playButton"]
 position = Vector2( 112, 60 )
 scale = Vector2( 0.84375, 0.734375 )
+z_index = 1
 texture = ExtResource( 12 )
 
 [node name="icon" type="Sprite" parent="Control/playButton/Sprite"]
 scale = Vector2( 0.763636, 0.680852 )
 texture = ExtResource( 4 )
 
-[node name="hoverSound" type="AudioStreamPlayer" parent="Control/playButton"]
-stream = ExtResource( 18 )
-volume_db = -9.043
-pitch_scale = 1.09
+[node name="bubble" type="Sprite" parent="Control/playButton/Sprite"]
+scale = Vector2( 1e-05, 1e-05 )
+z_index = -1
+texture = ExtResource( 20 )
+
+[node name="text" type="Label" parent="Control/playButton/Sprite/bubble"]
+anchor_left = 0.203
+anchor_top = 0.127
+anchor_right = 0.874
+anchor_bottom = 0.712
+margin_left = -74.516
+margin_top = -47.405
+margin_right = -30.404
+margin_bottom = -14.96
+rect_scale = Vector2( 0.761, 0.761 )
+custom_fonts/font = ExtResource( 15 )
+text = "play"
+align = 1
+valign = 1
 
 [node name="levelsButton" type="Button" parent="Control"]
 self_modulate = Color( 1, 1, 1, 0 )
@@ -90,11 +107,32 @@ __meta__ = {
 [node name="Sprite" type="Sprite" parent="Control/levelsButton"]
 position = Vector2( 111, 60 )
 scale = Vector2( 0.890625, 0.726562 )
+z_index = 1
 texture = ExtResource( 12 )
 
 [node name="icon" type="Sprite" parent="Control/levelsButton/Sprite"]
 scale = Vector2( 0.798246, 0.709678 )
 texture = ExtResource( 7 )
+
+[node name="bubble" type="Sprite" parent="Control/levelsButton/Sprite"]
+scale = Vector2( 1e-05, 1e-05 )
+z_index = -1
+texture = ExtResource( 20 )
+
+[node name="text" type="Label" parent="Control/levelsButton/Sprite/bubble"]
+anchor_left = 0.077
+anchor_top = 0.127
+anchor_right = 0.956
+anchor_bottom = 0.758
+margin_left = -64.053
+margin_top = -41.541
+margin_right = -2.565
+margin_bottom = -12.914
+rect_scale = Vector2( 0.647, 0.647 )
+custom_fonts/font = ExtResource( 15 )
+text = "levels"
+align = 1
+valign = 1
 
 [node name="creditsButton" type="Button" parent="Control"]
 self_modulate = Color( 1, 1, 1, 0 )
@@ -113,11 +151,32 @@ __meta__ = {
 [node name="Sprite" type="Sprite" parent="Control/creditsButton"]
 position = Vector2( 111, 60 )
 scale = Vector2( 0.890625, 0.726562 )
+z_index = 1
 texture = ExtResource( 12 )
 
 [node name="icon" type="Sprite" parent="Control/creditsButton/Sprite"]
 scale = Vector2( 0.789473, 0.677419 )
 texture = ExtResource( 6 )
+
+[node name="bubble" type="Sprite" parent="Control/creditsButton/Sprite"]
+scale = Vector2( 1e-05, 1e-05 )
+z_index = -1
+texture = ExtResource( 20 )
+
+[node name="text" type="Label" parent="Control/creditsButton/Sprite/bubble"]
+anchor_left = 0.04
+anchor_top = 0.09
+anchor_right = 0.983
+anchor_bottom = 0.847
+margin_left = -63.973
+margin_top = -41.506
+margin_right = 41.323
+margin_bottom = -5.337
+rect_scale = Vector2( 0.534, 0.635 )
+custom_fonts/font = ExtResource( 15 )
+text = "credits"
+align = 1
+valign = 1
 
 [node name="exitButton" type="Button" parent="Control"]
 self_modulate = Color( 1, 1, 1, 0 )
@@ -136,11 +195,31 @@ __meta__ = {
 [node name="Sprite" type="Sprite" parent="Control/exitButton"]
 position = Vector2( 111, 60 )
 scale = Vector2( 0.890625, 0.726562 )
+z_index = 1
 texture = ExtResource( 12 )
 
 [node name="icon" type="Sprite" parent="Control/exitButton/Sprite"]
 scale = Vector2( 0.675438, 0.666666 )
 texture = ExtResource( 5 )
+
+[node name="bubble" type="Sprite" parent="Control/exitButton/Sprite"]
+scale = Vector2( 1e-05, 1e-05 )
+z_index = -1
+texture = ExtResource( 20 )
+
+[node name="text" type="Label" parent="Control/exitButton/Sprite/bubble"]
+anchor_left = 0.127
+anchor_right = 0.902
+anchor_bottom = 0.935
+margin_left = -63.974
+margin_top = -39.296
+margin_right = -36.174
+margin_bottom = 8.09899
+rect_scale = Vector2( 0.781, 0.603 )
+custom_fonts/font = ExtResource( 15 )
+text = "exit"
+align = 1
+valign = 1
 
 [node name="Logo" type="Sprite" parent="Control"]
 position = Vector2( 495, 248 )
@@ -178,11 +257,6 @@ position = Vector2( 44, 32 )
 scale = Vector2( 0.71875, 0.679688 )
 texture = ExtResource( 5 )
 
-[node name="hoverSound" type="AudioStreamPlayer" parent="Control/LeaveMenu/NoButton"]
-stream = ExtResource( 18 )
-volume_db = -10.0
-pitch_scale = 1.09
-
 [node name="YesButton" type="Button" parent="Control/LeaveMenu"]
 self_modulate = Color( 1, 1, 1, 0 )
 anchor_left = 0.103
@@ -198,11 +272,6 @@ margin_bottom = -49.527
 position = Vector2( 44.5, 34 )
 scale = Vector2( 0.710938, 0.5625 )
 texture = ExtResource( 2 )
-
-[node name="hoverSound" type="AudioStreamPlayer" parent="Control/LeaveMenu/YesButton"]
-stream = ExtResource( 18 )
-volume_db = -10.0
-pitch_scale = 1.09
 
 [node name="settingsButton" type="Button" parent="Control"]
 self_modulate = Color( 1, 1, 1, 0 )
@@ -295,25 +364,33 @@ align = 1
 valign = 1
 
 [node name="Sprite" type="Sprite" parent="Control/StatsBoard"]
-self_modulate = Color( 0.160784, 0.160784, 0.160784, 1 )
-position = Vector2( -44.5, 125.25 )
-scale = Vector2( 0.629167, 0.635802 )
+self_modulate = Color( 0.235294, 0.235294, 0.235294, 1 )
+position = Vector2( 594, -31 )
+scale = Vector2( 0.891667, 0.635802 )
 texture = ExtResource( 19 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="livesLabel" type="Label" parent="Control/StatsBoard/Sprite"]
 anchor_left = -1.767
 anchor_right = -1.767
 anchor_bottom = 40.74
-margin_left = 324.742
-margin_top = -58.5874
-margin_right = 584.742
-margin_bottom = -3212.53
-rect_scale = Vector2( 0.761, 0.761 )
+margin_left = 311.931
+margin_top = -44.4321
+margin_right = 719.931
+margin_bottom = -3198.37
+rect_scale = Vector2( 0.551, 0.551 )
 custom_fonts/font = ExtResource( 15 )
-text = "Lives: 00"
+text = "Spawners: 00"
 align = 1
 valign = 1
 
 [node name="sound" type="AudioStreamPlayer" parent="Control"]
 stream = ExtResource( 17 )
 volume_db = -28.261
+
+[node name="hoverSound" type="AudioStreamPlayer" parent="Control"]
+stream = ExtResource( 18 )
+volume_db = -9.043
+pitch_scale = 1.09

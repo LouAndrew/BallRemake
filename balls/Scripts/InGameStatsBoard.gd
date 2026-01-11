@@ -12,7 +12,7 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	displayStats()
-	livesText.set_text("Lives: " + str(ScoringSys.lives))
+	livesText.set_text("Spawners: " + str(ScoringSys.lives))
 	
 func displayStats():
 	scoreLabel.set_text(str(ScoringSys.newScores[LevelMonitor.currentLevel]))

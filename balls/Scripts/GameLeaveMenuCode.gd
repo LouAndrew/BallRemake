@@ -1,9 +1,11 @@
 extends Sprite
 
-
-
 onready var NoButton:Button = $NoButton
 onready var YesButton:Button = $YesButton
+
+onready var streamPlayer2:AudioStreamPlayer = $"../hoverSound"
+
+var buttonNum:Array = [1,1]
 
 func _ready() -> void:
 	YesButton.connect("pressed",self,"_on_yes_pressed")
@@ -34,14 +36,23 @@ func showMenu(delta):
 		
 func buttonUtilisation(delta):
 	if $NoButton/Sprite.global_position.distance_to(get_global_mouse_position()) <= 40:
+		if buttonNum[0] < 2 and $NoButton.visible:
+			streamPlayer2.playing = true
+			buttonNum[0] += 1
 		interpolateElScale(delta,Vector2(0.8,0.78),$NoButton/Sprite)
 	else:
 		interpolateElScale(delta,Vector2(0.719,0.68),$NoButton/Sprite)
+		buttonNum[0] = 1
 		
 	if $YesButton/Sprite.global_position.distance_to(get_global_mouse_position()) <= 40:
+		if buttonNum[0] < 2 and $YesButton.visible:
+			streamPlayer2.playing = true
+			buttonNum[0] += 1
 		interpolateElScale(delta,Vector2(0.8,0.78),$YesButton/Sprite)
 	else:
 		interpolateElScale(delta,Vector2(0.719,0.6),$YesButton/Sprite)
+		buttonNum[1] = 1
+		
 func interpolateEl(delta,targetPosition:Vector2,Ui_element):
 	var t := 0.1
 	t += delta * 0.4
