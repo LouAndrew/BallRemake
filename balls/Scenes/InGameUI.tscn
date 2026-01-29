@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Scripts/pauseScript.gd" type="Script" id=1]
 [ext_resource path="res://Assets/pause_icon.png" type="Texture" id=2]
@@ -15,9 +15,10 @@
 [ext_resource path="res://Assets/panel8.png" type="Texture" id=13]
 [ext_resource path="res://font1.tres" type="DynamicFont" id=14]
 [ext_resource path="res://Scripts/InGameStatsBoard.gd" type="Script" id=15]
-[ext_resource path="res://Scripts/tutorialCode.gd" type="Script" id=16]
+[ext_resource path="res://Scripts/levelTutorialCode.gd" type="Script" id=16]
 [ext_resource path="res://Assets/panel1.png" type="Texture" id=17]
 [ext_resource path="res://Sounds/buttonHover.wav" type="AudioStream" id=18]
+[ext_resource path="res://Assets/arrow.png" type="Texture" id=19]
 
 [node name="Node" type="Node"]
 
@@ -225,60 +226,57 @@ valign = 1
 self_modulate = Color( 0, 0, 0, 1 )
 position = Vector2( 758, 35 )
 scale = Vector2( 0.76, 0.67 )
+z_index = -1
 texture = ExtResource( 17 )
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="livesLabel" type="Label" parent="CanvasLayer/Control/StatsBoard/sprite"]
-anchor_left = -0.087
-anchor_right = 66.1
-anchor_bottom = 40.74
-margin_left = -92.7764
-margin_top = -33.9964
+anchor_top = 0.08
+anchor_right = 65.959
+anchor_bottom = 1.0
+margin_left = -113.656
+margin_top = -40.4764
 margin_right = -15569.7
-margin_bottom = -3237.94
+margin_bottom = -18.9998
 rect_scale = Vector2( 0.563, 0.606 )
 custom_fonts/font = ExtResource( 14 )
 text = "Spawners: 00"
 align = 1
 valign = 1
 
-[node name="Node" type="Node" parent="CanvasLayer/Control"]
-script = ExtResource( 16 )
-
-[node name="tipsLabel" type="Label" parent="CanvasLayer/Control/Node"]
-anchor_left = 0.262
-anchor_top = 0.922
-anchor_right = 0.32
-anchor_bottom = 0.985
-margin_left = -0.287964
-margin_top = -0.19989
-margin_right = 112.32
-margin_bottom = 71.0001
-rect_scale = Vector2( 0.346, 0.346 )
-custom_fonts/font = ExtResource( 14 )
-text = "Tips:"
-align = 1
-valign = 1
-
-[node name="tip" type="Label" parent="CanvasLayer/Control/Node"]
-anchor_left = 0.333
-anchor_top = 0.927
-anchor_right = 0.438
-anchor_bottom = 0.985
-margin_left = 0.00796509
-margin_top = -0.200012
-margin_right = 228.488
-margin_bottom = 73.9999
-rect_scale = Vector2( 0.32, 0.32 )
-custom_fonts/font = ExtResource( 14 )
-valign = 1
-
 [node name="hoverSound" type="AudioStreamPlayer" parent="CanvasLayer/Control"]
 stream = ExtResource( 18 )
 volume_db = -9.043
 pitch_scale = 1.09
+
+[node name="tutorial" type="Node" parent="CanvasLayer"]
+script = ExtResource( 16 )
+
+[node name="inGameAction" type="Sprite" parent="CanvasLayer/tutorial"]
+visible = false
+position = Vector2( 400, 504 )
+scale = Vector2( 0.835938, 0.804688 )
+texture = ExtResource( 19 )
+
+[node name="inGameAction2" type="Sprite" parent="CanvasLayer/tutorial"]
+visible = false
+position = Vector2( 598, 355 )
+rotation = 1.5708
+scale = Vector2( 0.835938, 0.804688 )
+texture = ExtResource( 19 )
+
+[node name="textBg" type="Sprite" parent="CanvasLayer/tutorial"]
+visible = false
+
+[node name="textExplanation" type="Label" parent="CanvasLayer/tutorial/textBg"]
+margin_left = 604.0
+margin_top = 475.0
+margin_right = 839.0
+margin_bottom = 556.0
+rect_scale = Vector2( 0.677, 0.677 )
+text = "Press E"
 
 [node name="Control" parent="." instance=ExtResource( 5 )]
 

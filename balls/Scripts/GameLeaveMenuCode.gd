@@ -36,7 +36,7 @@ func showMenu(delta):
 		
 func buttonUtilisation(delta):
 	if $NoButton/Sprite.global_position.distance_to(get_global_mouse_position()) <= 40:
-		if buttonNum[0] < 2 and $NoButton.visible:
+		if buttonNum[0] < 2 and self.visible:
 			streamPlayer2.playing = true
 			buttonNum[0] += 1
 		interpolateElScale(delta,Vector2(0.8,0.78),$NoButton/Sprite)
@@ -45,9 +45,9 @@ func buttonUtilisation(delta):
 		buttonNum[0] = 1
 		
 	if $YesButton/Sprite.global_position.distance_to(get_global_mouse_position()) <= 40:
-		if buttonNum[0] < 2 and $YesButton.visible:
+		if buttonNum[1] < 2 and self.visible:
 			streamPlayer2.playing = true
-			buttonNum[0] += 1
+			buttonNum[1] += 1
 		interpolateElScale(delta,Vector2(0.8,0.78),$YesButton/Sprite)
 	else:
 		interpolateElScale(delta,Vector2(0.719,0.6),$YesButton/Sprite)

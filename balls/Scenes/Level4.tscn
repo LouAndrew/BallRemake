@@ -135,8 +135,7 @@ position = Vector2( 15828.4, 915.965 )
 rotation = 1.5708
 
 [node name="Spike9" parent="SpikeCotainor" instance=ExtResource( 5 )]
-position = Vector2( 12996, 3228 )
-rotation = -3.13812
+position = Vector2( 12940.2, 3272 )
 
 [node name="Spike8" parent="SpikeCotainor" instance=ExtResource( 5 )]
 position = Vector2( 15430.1, 1740.06 )
@@ -430,8 +429,8 @@ __meta__ = {
 shape = SubResource( 6 )
 
 [node name="Sprite" type="Sprite" parent="Node/slide13"]
-position = Vector2( 1.34017, -0.499999 )
-scale = Vector2( 1.05188, 1.07813 )
+position = Vector2( 1.83992, -0.999911 )
+scale = Vector2( 1.0675, 1.09375 )
 texture = ExtResource( 9 )
 
 [node name="slide14" type="StaticBody2D" parent="Node"]
@@ -559,7 +558,8 @@ __meta__ = {
 shape = SubResource( 6 )
 
 [node name="Sprite" type="Sprite" parent="Node/slide22"]
-scale = Vector2( 1.01, 1 )
+position = Vector2( -1.15531, 0.219666 )
+scale = Vector2( 1.0461, 1.04001 )
 texture = ExtResource( 9 )
 
 [node name="slide23" type="StaticBody2D" parent="Node"]
@@ -573,7 +573,8 @@ __meta__ = {
 shape = SubResource( 6 )
 
 [node name="Sprite" type="Sprite" parent="Node/slide23"]
-scale = Vector2( 1.01, 1 )
+position = Vector2( -0.353599, -0.707092 )
+scale = Vector2( 1.02105, 1.0221 )
 texture = ExtResource( 9 )
 
 [node name="slide24" type="StaticBody2D" parent="Node"]

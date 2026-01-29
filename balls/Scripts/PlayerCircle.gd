@@ -26,6 +26,7 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	CompressCircle()
 	resetJumpCount()
+	brickDetect()
 	FallOffDetect()
 	RespawnPointDeterminor()
 	LevelComplete()
@@ -33,34 +34,47 @@ func _process(_delta: float) -> void:
 
 func _physics_process(delta: float) -> void:
 	deathDetect()
-	Jump()
-	moveMent()
+	Jump(delta)
+	moveMent(delta)
 	velocity.y += gravity * delta
 	velocity = move_and_slide(velocity)
 	velocity = move_and_slide(velocity,Vector2.UP)
 	
-func moveMent():
+func moveMent(delta):
 	if Input.is_action_pressed("ui_right"):
 		velocity.x = speed
 		$RayCast2D.cast_to = Vector2(116,105)
+		$streak.position = Vector2(-164,-2)
+		$streak.rotation_degrees = 0
+		interpolateElScale(delta,Vector2(2.562,1.344),$streak)
 		if Input.is_action_pressed("ui_down") != true:
 			$CollisionShape2D.rotation += rotationInc
 			$Sprite.rotation += rotationInc
 	elif Input.is_action_pressed("ui_left"):
 		velocity.x = -speed
 		$RayCast2D.cast_to = Vector2(116,-105)
+		$streak.position = Vector2(164,2)
+		$streak.rotation_degrees = 180
+		interpolateElScale(delta,Vector2(2.562,1.344),$streak)
 		if Input.is_action_pressed("ui_down") != true:
 			$CollisionShape2D.rotation -= rotationInc
 			$Sprite.rotation -= rotationInc
 	else:
 		velocity.x = 0
-func Jump():
+		$streak.position = Vector2(0,0)
+		interpolateElScale(delta,Vector2(0,0),$streak)
+		
+func Jump(delta):
+	if Input.is_action_pressed("ui_up"):
+		interpolateElScale(delta,Vector2(2.562,1.344),$streak)
+		$streak.position = Vector2(0,162)
+		$streak.rotation_degrees = -90
+		
 	if Input.is_action_just_pressed("ui_up"):
 		if jumpCount < 1:
 			jumpSound.playing = true
 			velocity.y = jumpForce
 			jumpCount += 1
-			
 func resetJumpCount():
 	if is_on_floor():
 		jumpCount = 0
@@ -92,6 +106,14 @@ func FallOffDetect():
 			deathCounter[1][0]  += 1
 			ScoringSys.newDeathScore[LevelMonitor.currentLevel] += 1
 			Respawn()
+			
+func brickDetect():
+	var overLappingBod = $Area2D.get_overlapping_bodies()
+	for bod in overLappingBod:
+		if bod.is_in_group("Brick"):
+			deathSound.playing = true
+			ScoringSys.newDeathScore[LevelMonitor.currentLevel] += 1
+			Respawn()
 func RespawnPointDeterminor():
 	var overLappingArea = $Area2D.get_overlapping_areas()
 	if SpawnPoint == Vector2():
@@ -100,10 +122,11 @@ func RespawnPointDeterminor():
 				SpawnPoint = area.position
 				
 func slopDetect():
-	if $RayCast2D.is_colliding() and self.get_floor_angle() >= 1.5:
-		speed = 700
-	else:
-		speed = 500
+	pass
+#	if $RayCast2D.is_colliding() and self.get_floor_angle() >= 1.5:
+#		speed = 700
+#	else:
+#		speed = 500
 func Respawn():
 	self.position = SpawnPoint
 	
@@ -121,3 +144,9 @@ func newSpawnPoint():
 		get_parent().add_child(newPoint)
 		newPoint.global_transform = spawnPoint.global_transform
 		ScoringSys.lives -= 1
+		
+func interpolateElScale(delta,targetPosition:Vector2,Ui_element):
+	var t := 0.1
+	t += delta * 0.4
+	Ui_element.scale = Ui_element.scale.linear_interpolate(targetPosition,t)
+	

@@ -39,8 +39,8 @@ points = PoolVector2Array( 0, 0, 258, 0, 258, 256, 0, 256 )
 0/z_index = 0
 
 [sub_resource type="SegmentShape2D" id=4]
-a = Vector2( -34, 34 )
-b = Vector2( 33, -32 )
+a = Vector2( -29.9999, 31 )
+b = Vector2( 32.5298, -31 )
 
 [node name="TileMap" type="TileMap"]
 scale = Vector2( 0.251, 0.25 )
@@ -395,11 +395,12 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node/slide19"]
+position = Vector2( -0.196, 0 )
 shape = SubResource( 4 )
 
 [node name="Sprite" type="Sprite" parent="Node/slide19"]
-position = Vector2( 0, 0.5 )
-scale = Vector2( 1.01, 1.01563 )
+position = Vector2( 0, 1.00008 )
+scale = Vector2( 1.01, 1 )
 texture = ExtResource( 2 )
 
 [node name="slide20" type="StaticBody2D" parent="Node"]
@@ -409,11 +410,12 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node/slide20"]
+position = Vector2( -1.096, 0 )
 shape = SubResource( 4 )
 
 [node name="Sprite" type="Sprite" parent="Node/slide20"]
-position = Vector2( 0, 0.5 )
-scale = Vector2( 1.01, 1.01563 )
+position = Vector2( -0.6601, 1.00008 )
+scale = Vector2( 0.989372, 1 )
 texture = ExtResource( 2 )
 
 [node name="slide21" type="StaticBody2D" parent="Node"]
@@ -465,6 +467,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node/slide24"]
+position = Vector2( -1.849, 0 )
 shape = SubResource( 4 )
 
 [node name="Sprite" type="Sprite" parent="Node/slide24"]
@@ -479,6 +482,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node/slide25"]
+position = Vector2( -1.79, 0.434 )
 shape = SubResource( 4 )
 
 [node name="Sprite" type="Sprite" parent="Node/slide25"]
@@ -511,8 +515,8 @@ __meta__ = {
 shape = SubResource( 4 )
 
 [node name="Sprite" type="Sprite" parent="Node/slide27"]
-position = Vector2( 0.898632, 0 )
-scale = Vector2( 1.00882, 1 )
+position = Vector2( 0.721658, 0.35376 )
+scale = Vector2( 1.01435, 1.01105 )
 texture = ExtResource( 2 )
 
 [node name="slide28" type="StaticBody2D" parent="Node"]

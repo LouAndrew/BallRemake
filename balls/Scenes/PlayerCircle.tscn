@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Assets/PlayerCircle.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/PlayerCircle.gd" type="Script" id=2]
+[ext_resource path="res://Assets/streak.png" type="Texture" id=3]
 [ext_resource path="res://Sounds/jumpSFX.wav" type="AudioStream" id=4]
 [ext_resource path="res://Sounds/deathSFX.wav" type="AudioStream" id=5]
 
@@ -61,3 +62,9 @@ volume_db = 16.087
 
 [node name="Position2D" type="Position2D" parent="."]
 position = Vector2( 0, -250 )
+
+[node name="streak" type="Sprite" parent="."]
+position = Vector2( -164, -2 )
+scale = Vector2( 2.5625, 1.34375 )
+z_index = -1
+texture = ExtResource( 3 )

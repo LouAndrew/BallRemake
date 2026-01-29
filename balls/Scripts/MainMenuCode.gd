@@ -12,8 +12,6 @@ onready var bubbles:Array = [$playButton/Sprite/bubble,$levelsButton/Sprite/bubb
 
 var buttonNum:Array = [1,1,1,1,1]
 
-signal makeTransitionSound()
-
 func _ready() -> void:
 	backgroundSound.playing = true
 	PlayButton.connect("pressed",self,"PlayGame")
