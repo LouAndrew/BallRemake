@@ -8,7 +8,7 @@ onready var jumpSound:AudioStreamPlayer = $Sounds/jumpSound
 
 var velocity:Vector2 = Vector2.UP
 var gravity:int = 1000
-var speed:int = 400
+#var speed:int = 400
 var jumpForce:int = -300
 var jumpCount:int = 0
 var rotationInc:float = 1.5
@@ -21,8 +21,13 @@ var FallOffDeath:String = "FallOffDeath"
 
 var deathCounter:Array = [[0],[0]]
 
+var speed : int  = 0
+var Maxspeed:int = 400
+var acceleration:int = 1500
+
 func _ready() -> void:
 	pass
+	
 func _process(_delta: float) -> void:
 	CompressCircle()
 	resetJumpCount()
@@ -42,7 +47,12 @@ func _physics_process(delta: float) -> void:
 	
 func moveMent(delta):
 	if Input.is_action_pressed("ui_right"):
-		velocity.x = speed
+		if velocity.x == Maxspeed:
+			speed = Maxspeed
+		elif velocity.x < Maxspeed:
+			speed += acceleration * delta
+			speed = min(speed,Maxspeed)
+			velocity.x = speed
 		$RayCast2D.cast_to = Vector2(116,105)
 		$streak.position = Vector2(-164,-2)
 		$streak.rotation_degrees = 0
@@ -51,7 +61,12 @@ func moveMent(delta):
 			$CollisionShape2D.rotation += rotationInc
 			$Sprite.rotation += rotationInc
 	elif Input.is_action_pressed("ui_left"):
-		velocity.x = -speed
+		if velocity.x == -Maxspeed:
+			speed = -Maxspeed
+		elif velocity.x > -Maxspeed:
+		   speed -= acceleration * delta
+		   speed = max(speed,-Maxspeed)
+		   velocity.x = speed
 		$RayCast2D.cast_to = Vector2(116,-105)
 		$streak.position = Vector2(164,2)
 		$streak.rotation_degrees = 180
@@ -60,6 +75,7 @@ func moveMent(delta):
 			$CollisionShape2D.rotation -= rotationInc
 			$Sprite.rotation -= rotationInc
 	else:
+		speed = move_toward(speed,0,acceleration * delta)
 		velocity.x = 0
 		$streak.position = Vector2(0,0)
 		interpolateElScale(delta,Vector2(0,0),$streak)
@@ -97,6 +113,7 @@ func deathDetect():
 			deathCounter[0][0]  += 1
 			ScoringSys.newDeathScore[LevelMonitor.currentLevel] += 1
 			Respawn()
+			
 func FallOffDetect():
 	var overLappiingAreas = $Area2D.get_overlapping_areas()
 	for area in overLappiingAreas:
@@ -114,6 +131,7 @@ func brickDetect():
 			deathSound.playing = true
 			ScoringSys.newDeathScore[LevelMonitor.currentLevel] += 1
 			Respawn()
+			
 func RespawnPointDeterminor():
 	var overLappingArea = $Area2D.get_overlapping_areas()
 	if SpawnPoint == Vector2():
