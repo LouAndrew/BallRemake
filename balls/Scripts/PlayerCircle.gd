@@ -47,6 +47,7 @@ func _physics_process(delta: float) -> void:
 	
 func moveMent(delta):
 	if Input.is_action_pressed("ui_right"):
+		interpolateEl(delta,Vector2(90,0),$smallCircle)
 		if velocity.x == Maxspeed:
 			speed = Maxspeed
 		elif velocity.x < Maxspeed:
@@ -61,6 +62,7 @@ func moveMent(delta):
 			$CollisionShape2D.rotation += rotationInc
 			$Sprite.rotation += rotationInc
 	elif Input.is_action_pressed("ui_left"):
+		interpolateEl(delta,Vector2(-90,0),$smallCircle)
 		if velocity.x == -Maxspeed:
 			speed = -Maxspeed
 		elif velocity.x > -Maxspeed:
@@ -77,11 +79,13 @@ func moveMent(delta):
 	else:
 		speed = move_toward(speed,0,acceleration * delta)
 		velocity.x = 0
+		interpolateEl(delta,Vector2(0,0),$smallCircle)
 		$streak.position = Vector2(0,0)
 		interpolateElScale(delta,Vector2(0,0),$streak)
 		
 func Jump(delta):
 	if Input.is_action_pressed("ui_up"):
+		interpolateEl(delta,Vector2(0,-90),$smallCircle)
 		interpolateElScale(delta,Vector2(2.562,1.344),$streak)
 		$streak.position = Vector2(0,162)
 		$streak.rotation_degrees = -90
@@ -168,3 +172,7 @@ func interpolateElScale(delta,targetPosition:Vector2,Ui_element):
 	t += delta * 0.4
 	Ui_element.scale = Ui_element.scale.linear_interpolate(targetPosition,t)
 	
+func interpolateEl(delta,targetPosition:Vector2,Ui_element):
+	var t := 0.1
+	t += delta * 0.4
+	Ui_element.position = Ui_element.position.linear_interpolate(targetPosition,t)
