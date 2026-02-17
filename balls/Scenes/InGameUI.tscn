@@ -18,7 +18,7 @@
 [ext_resource path="res://Scripts/levelTutorialCode.gd" type="Script" id=16]
 [ext_resource path="res://Assets/panel1.png" type="Texture" id=17]
 [ext_resource path="res://Sounds/buttonHover.wav" type="AudioStream" id=18]
-[ext_resource path="res://Assets/arrow.png" type="Texture" id=19]
+[ext_resource path="res://Assets/alertIcon.png" type="Texture" id=19]
 
 [node name="Node" type="Node"]
 
@@ -254,29 +254,36 @@ pitch_scale = 1.09
 [node name="tutorial" type="Node" parent="CanvasLayer"]
 script = ExtResource( 16 )
 
-[node name="inGameAction" type="Sprite" parent="CanvasLayer/tutorial"]
-visible = false
-position = Vector2( 400, 504 )
-scale = Vector2( 0.835938, 0.804688 )
+[node name="helpButton" type="Button" parent="CanvasLayer/tutorial"]
+self_modulate = Color( 1, 1, 1, 0 )
+anchor_left = 0.012
+anchor_top = 0.903
+anchor_right = 0.064
+anchor_bottom = 0.985
+margin_left = -0.288
+margin_top = 0.199951
+margin_right = 0.463997
+margin_bottom = -6.10352e-05
+
+[node name="Sprite" type="Sprite" parent="CanvasLayer/tutorial/helpButton"]
+position = Vector2( 28, 25 )
+scale = Vector2( 0.844, 0.757 )
 texture = ExtResource( 19 )
 
-[node name="inGameAction2" type="Sprite" parent="CanvasLayer/tutorial"]
+[node name="text" type="Label" parent="CanvasLayer/tutorial"]
 visible = false
-position = Vector2( 598, 355 )
-rotation = 1.5708
-scale = Vector2( 0.835938, 0.804688 )
-texture = ExtResource( 19 )
-
-[node name="textBg" type="Sprite" parent="CanvasLayer/tutorial"]
-visible = false
-
-[node name="textExplanation" type="Label" parent="CanvasLayer/tutorial/textBg"]
-margin_left = 604.0
-margin_top = 475.0
-margin_right = 839.0
-margin_bottom = 556.0
-rect_scale = Vector2( 0.677, 0.677 )
-text = "Press E"
+anchor_left = 0.081
+anchor_top = 0.917
+anchor_right = 0.432
+anchor_bottom = 0.972
+margin_left = 0.0559998
+margin_top = -0.200012
+margin_right = 478.632
+margin_bottom = 44.8
+rect_scale = Vector2( 0.429, 0.429 )
+custom_fonts/font = ExtResource( 14 )
+text = "hello there  how are you "
+valign = 1
 
 [node name="Control" parent="." instance=ExtResource( 5 )]
 
