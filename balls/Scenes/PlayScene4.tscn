@@ -53,35 +53,51 @@ z_index = -1
 position = Vector2( 2849.5, 536.375 )
 scale = Vector2( 1.5679, 3.64375 )
 z_index = -1
+detectGreaterX = false
+detectlessThanX = true
 
 [node name="guideEl9" parent="guides" instance=ExtResource( 4 )]
 position = Vector2( 2591, 538 )
 scale = Vector2( 1.5679, 3.64375 )
 z_index = -1
+detectGreaterX = false
+detectlessThanX = true
 
 [node name="guideEl10" parent="guides" instance=ExtResource( 4 )]
 position = Vector2( 2333, 538 )
 scale = Vector2( 1.5679, 3.64375 )
 z_index = -1
+detectGreaterX = false
+detectlessThanX = true
 
 [node name="guideEl11" parent="guides" instance=ExtResource( 4 )]
 position = Vector2( 2073, 534 )
 scale = Vector2( 1.5679, 3.64375 )
 z_index = -1
+detectGreaterX = false
+detectlessThanX = true
 
 [node name="guideEl12" parent="guides" instance=ExtResource( 4 )]
 position = Vector2( 1813, 538 )
 scale = Vector2( 1.5679, 3.64375 )
 z_index = -1
+detectGreaterX = false
+detectlessThanX = true
 
 [node name="guideEl13" parent="guides" instance=ExtResource( 4 )]
 self_modulate = Color( 0.905882, 0.686275, 0.686275, 1 )
 position = Vector2( 706.5, 512.5 )
 scale = Vector2( 0.80247, 4.585 )
 z_index = -1
+brickGuide = true
+detectGreaterX = false
+detectlessThanX = true
 
 [node name="guideEl14" parent="guides" instance=ExtResource( 4 )]
 self_modulate = Color( 0.905882, 0.686275, 0.686275, 1 )
 position = Vector2( 321.5, 495 )
 scale = Vector2( 0.802469, 4.585 )
 z_index = -1
+brickGuide = true
+detectGreaterX = false
+detectlessThanX = true

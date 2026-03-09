@@ -44,33 +44,39 @@ self_modulate = Color( 0.905882, 0.686275, 0.686275, 1 )
 position = Vector2( 1758, 335.5 )
 scale = Vector2( 0.839508, 3.705 )
 z_index = -1
+brickGuide = true
 
 [node name="guideEl7" parent="guides" instance=ExtResource( 4 )]
 self_modulate = Color( 0.905882, 0.686275, 0.686275, 1 )
 position = Vector2( 2015, 341 )
 scale = Vector2( 0.839508, 3.705 )
 z_index = -1
+brickGuide = true
 
 [node name="guideEl8" parent="guides" instance=ExtResource( 4 )]
 self_modulate = Color( 0.905882, 0.686275, 0.686275, 1 )
 position = Vector2( 2270, 341 )
 scale = Vector2( 0.839508, 3.705 )
 z_index = -1
+brickGuide = true
 
 [node name="guideEl9" parent="guides" instance=ExtResource( 4 )]
 self_modulate = Color( 0.905882, 0.686275, 0.686275, 1 )
 position = Vector2( 2526, 343 )
 scale = Vector2( 0.839508, 3.705 )
 z_index = -1
+brickGuide = true
 
 [node name="guideEl10" parent="guides" instance=ExtResource( 4 )]
 self_modulate = Color( 0.905882, 0.686275, 0.686275, 1 )
 position = Vector2( 2782, 343 )
 scale = Vector2( 0.839508, 3.705 )
 z_index = -1
+brickGuide = true
 
 [node name="guideEl11" parent="guides" instance=ExtResource( 4 )]
 self_modulate = Color( 0.905882, 0.686275, 0.686275, 1 )
 position = Vector2( 3038, 343 )
 scale = Vector2( 0.839508, 3.705 )
 z_index = -1
+brickGuide = true

@@ -80,3 +80,4 @@ position = Vector2( -286.232, 468 )
 rotation = 1.5708
 scale = Vector2( 11.42, 0.333647 )
 z_index = -1
+brickGuide = true

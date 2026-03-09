@@ -5,7 +5,7 @@ var currentLevel:int = 0
 var newLevel:int = 0
 var currentScene:String = LevelScenes[0]
 var level:int = 1
-
+var levelGuideNum:int= 0
 func _process(_delta: float) -> void:
 	SwitchLevel()
 	

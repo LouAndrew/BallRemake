@@ -21,9 +21,10 @@ var FallOffDeath:String = "FallOffDeath"
 
 var deathCounter:Array = [[0],[0]]
 
-var speed : int  = 0
-var Maxspeed:int = 400
-var acceleration:int = 1500
+var speed : float  = 0
+var Maxspeed:float = 400
+var acceleration:float = 1500
+
 
 func _ready() -> void:
 	pass
